@@ -13,6 +13,7 @@ Features:
 - Identifies support and resistance levels
 - Counts touches at these levels
 - Automatically selects optimal granularity based on date range
+- Visualizes price action with support/resistance levels and touch points
 """
 
 import os
@@ -23,6 +24,10 @@ import pandas as pd
 import numpy as np
 from scipy import signal
 from scipy.cluster.vq import kmeans
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+from matplotlib.patches import Rectangle, Patch
+import mplfinance as mpf
 from coinbase.rest import RESTClient
 from config import API_KEY, API_SECRET
 
@@ -406,6 +411,70 @@ class CryptoSidewaysAnalyzer:
                    
         return result
 
+    def visualize_product(self, product_id, df, support_levels, resistance_levels):
+        """
+        Visualize the price action with candlestick chart, support/resistance levels, and touch points
+        
+        Args:
+            product_id: The product identifier (e.g., 'BTC-USD')
+            df: DataFrame with OHLC data
+            support_levels: List of support levels
+            resistance_levels: List of resistance levels
+        """
+        if df is None or len(df) < 10:
+            logger.warning(f"Not enough data to visualize {product_id}")
+            return
+            
+        try:
+            # Create plots directory if it doesn't exist
+            os.makedirs('plots', exist_ok=True)
+            
+            # Prepare data for visualization - mplfinance requires specific format
+            df_plot = df.copy()
+            
+            # Format the data correctly for mplfinance
+            ohlc_data = {
+                'Open': df_plot['open'],
+                'High': df_plot['high'],
+                'Low': df_plot['low'],
+                'Close': df_plot['close'],
+                'Volume': df_plot['volume']
+            }
+            
+            mpf_df = pd.DataFrame(ohlc_data, index=df_plot.index)
+            
+            # Add support and resistance levels to the plot
+            addplot = []
+            for level in support_levels:
+                addplot.append(mpf.make_addplot([level] * len(mpf_df), color='blue', linestyle='--', 
+                              width=1, label=f'Support: ${level:.2f}'))
+            for level in resistance_levels:
+                addplot.append(mpf.make_addplot([level] * len(mpf_df), color='red', linestyle='--',
+                              width=1, label=f'Resistance: ${level:.2f}'))
+            
+            # Create the chart title with volatility info
+            title = f"{product_id} Price Action - Volatility: {self.calculate_volatility(df):.2%}"
+            
+            # Plot candlestick chart with mplfinance
+            filename = f"plots/{product_id.replace('-', '_')}_{self.start_date}_to_{self.end_date}.png"
+            
+            # Use mplfinance to create the plot
+            mpf.plot(mpf_df, 
+                    type='candle', 
+                    style='charles',
+                    addplot=addplot if addplot else None,
+                    title=title,
+                    volume=True,
+                    figsize=(12, 8),
+                    savefig=filename)
+            
+            logger.info(f"Chart saved to {filename}")
+            
+        except Exception as e:
+            logger.error(f"Error visualizing {product_id}: {e}")
+            import traceback
+            traceback.print_exc()
+
     def run_analysis(self):
         """
         Run the analysis on all USD cryptocurrency pairs
@@ -542,6 +611,23 @@ def main():
         
         # Print results
         analyzer.print_results(limit=args.limit)
+        
+        # Visualize the top result
+        if results:
+            top_result = results[0]
+            product_id = top_result['product_id']
+            print(f"\nGenerating visualization for {product_id}...")
+            df = analyzer.fetch_historical_data(product_id)
+            
+            # Get all support and resistance levels
+            support_levels = [result['support_level'] for result in results if result['product_id'] == product_id]
+            resistance_levels = [result['resistance_level'] for result in results if result['product_id'] == product_id]
+            
+            # Visualize the product
+            analyzer.visualize_product(product_id, df, support_levels, resistance_levels)
+            print(f"Visualization saved to plots/{product_id.replace('-', '_')}_{args.start}_to_{args.end}.png")
+        else:
+            print("No suitable cryptocurrencies found to visualize.")
         
     except Exception as e:
         logger.error(f"Error running analysis: {e}")
