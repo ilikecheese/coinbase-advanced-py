@@ -1,0 +1,57 @@
+2025-05-09 12:04:35,269 - candle_granularity_test - INFO - Starting candle granularity tests
+2025-05-09 12:04:35,271 - candle_granularity_test - INFO - Testing FIVE_MINUTE candles for BTC-USDC
+2025-05-09 12:04:35,271 - candle_granularity_test - INFO - Time range: 2025-05-09 11:04:35 to 2025-05-09 12:04:35
+2025-05-09 12:04:35,521 - candle_granularity_test - INFO - Candle 0 to 1: -5.0 minutes difference
+2025-05-09 12:04:35,522 - candle_granularity_test - INFO -   2025-05-09 12:00:00 to 2025-05-09 11:55:00
+2025-05-09 12:04:35,523 - candle_granularity_test - INFO - Candle 1 to 2: -5.0 minutes difference
+2025-05-09 12:04:35,523 - candle_granularity_test - INFO -   2025-05-09 11:55:00 to 2025-05-09 11:50:00
+2025-05-09 12:04:35,525 - candle_granularity_test - INFO - Candle 2 to 3: -5.0 minutes difference
+2025-05-09 12:04:35,526 - candle_granularity_test - INFO -   2025-05-09 11:50:00 to 2025-05-09 11:45:00
+2025-05-09 12:04:35,527 - candle_granularity_test - INFO - Candle 3 to 4: -5.0 minutes difference
+2025-05-09 12:04:35,527 - candle_granularity_test - INFO -   2025-05-09 11:45:00 to 2025-05-09 11:40:00
+2025-05-09 12:04:35,529 - candle_granularity_test - INFO - Average time between candles: -5.00 minutes
+2025-05-09 12:04:35,529 - candle_granularity_test - INFO - Expected time between candles for FIVE_MINUTE: 5 minutes
+2025-05-09 12:04:35,530 - candle_granularity_test - INFO - Total candles received: 12
+2025-05-09 12:04:35,585 - candle_granularity_test - INFO - Data saved to BTC_USDC_five_minute_test.csv
+2025-05-09 12:04:35,587 - candle_granularity_test - INFO - Testing FIVE_MINUTE candles for BTC-USDC
+2025-05-09 12:04:35,587 - candle_granularity_test - INFO - Time range: 2025-05-09 08:04:35 to 2025-05-09 12:04:35
+2025-05-09 12:04:35,735 - candle_granularity_test - INFO - Candle 0 to 1: -5.0 minutes difference
+2025-05-09 12:04:35,736 - candle_granularity_test - INFO -   2025-05-09 12:00:00 to 2025-05-09 11:55:00
+2025-05-09 12:04:35,737 - candle_granularity_test - INFO - Candle 1 to 2: -5.0 minutes difference
+2025-05-09 12:04:35,737 - candle_granularity_test - INFO -   2025-05-09 11:55:00 to 2025-05-09 11:50:00
+2025-05-09 12:04:35,738 - candle_granularity_test - INFO - Candle 2 to 3: -5.0 minutes difference
+2025-05-09 12:04:35,739 - candle_granularity_test - INFO -   2025-05-09 11:50:00 to 2025-05-09 11:45:00
+2025-05-09 12:04:35,740 - candle_granularity_test - INFO - Candle 3 to 4: -5.0 minutes difference
+2025-05-09 12:04:35,740 - candle_granularity_test - INFO -   2025-05-09 11:45:00 to 2025-05-09 11:40:00
+2025-05-09 12:04:35,743 - candle_granularity_test - INFO - Average time between candles: -5.00 minutes
+2025-05-09 12:04:35,744 - candle_granularity_test - INFO - Expected time between candles for FIVE_MINUTE: 5 minutes
+2025-05-09 12:04:35,744 - candle_granularity_test - INFO - Total candles received: 48
+2025-05-09 12:04:35,753 - candle_granularity_test - INFO - Data saved to BTC_USDC_five_minute_test.csv
+2025-05-09 12:04:35,755 - candle_granularity_test - INFO - Testing FIVE_MINUTE candles for BTC-USDC
+2025-05-09 12:04:35,755 - candle_granularity_test - INFO - Time range: 2025-05-08 12:04:35 to 2025-05-09 12:04:35
+2025-05-09 12:04:35,927 - candle_granularity_test - INFO - Candle 0 to 1: -5.0 minutes difference
+2025-05-09 12:04:35,928 - candle_granularity_test - INFO -   2025-05-09 12:00:00 to 2025-05-09 11:55:00
+2025-05-09 12:04:35,930 - candle_granularity_test - INFO - Candle 1 to 2: -5.0 minutes difference
+2025-05-09 12:04:35,930 - candle_granularity_test - INFO -   2025-05-09 11:55:00 to 2025-05-09 11:50:00
+2025-05-09 12:04:35,931 - candle_granularity_test - INFO - Candle 2 to 3: -5.0 minutes difference
+2025-05-09 12:04:35,932 - candle_granularity_test - INFO -   2025-05-09 11:50:00 to 2025-05-09 11:45:00
+2025-05-09 12:04:35,933 - candle_granularity_test - INFO - Candle 3 to 4: -5.0 minutes difference
+2025-05-09 12:04:35,935 - candle_granularity_test - INFO -   2025-05-09 11:45:00 to 2025-05-09 11:40:00
+2025-05-09 12:04:35,945 - candle_granularity_test - INFO - Average time between candles: -5.00 minutes
+2025-05-09 12:04:35,945 - candle_granularity_test - INFO - Expected time between candles for FIVE_MINUTE: 5 minutes
+2025-05-09 12:04:35,946 - candle_granularity_test - INFO - Total candles received: 288
+2025-05-09 12:04:35,959 - candle_granularity_test - INFO - Data saved to BTC_USDC_five_minute_test.csv
+2025-05-09 12:04:35,961 - candle_granularity_test - INFO - Testing FIVE_MINUTE candles for ETH-USDC
+2025-05-09 12:04:35,962 - candle_granularity_test - INFO - Time range: 2025-05-09 08:04:35 to 2025-05-09 12:04:35
+2025-05-09 12:04:36,114 - candle_granularity_test - INFO - Candle 0 to 1: -5.0 minutes difference
+2025-05-09 12:04:36,115 - candle_granularity_test - INFO -   2025-05-09 12:00:00 to 2025-05-09 11:55:00
+2025-05-09 12:04:36,116 - candle_granularity_test - INFO - Candle 1 to 2: -5.0 minutes difference
+2025-05-09 12:04:36,117 - candle_granularity_test - INFO -   2025-05-09 11:55:00 to 2025-05-09 11:50:00
+2025-05-09 12:04:36,118 - candle_granularity_test - INFO - Candle 2 to 3: -5.0 minutes difference
+2025-05-09 12:04:36,118 - candle_granularity_test - INFO -   2025-05-09 11:50:00 to 2025-05-09 11:45:00
+2025-05-09 12:04:36,119 - candle_granularity_test - INFO - Candle 3 to 4: -5.0 minutes difference
+2025-05-09 12:04:36,120 - candle_granularity_test - INFO -   2025-05-09 11:45:00 to 2025-05-09 11:40:00
+2025-05-09 12:04:36,122 - candle_granularity_test - INFO - Average time between candles: -5.00 minutes
+2025-05-09 12:04:36,122 - candle_granularity_test - INFO - Expected time between candles for FIVE_MINUTE: 5 minutes
+2025-05-09 12:04:36,123 - candle_granularity_test - INFO - Total candles received: 48
+2025-05-09 12:04:36,131 - candle_granularity_test - INFO - Data saved to ETH_USDC_five_minute_test.csv

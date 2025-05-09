@@ -41,7 +41,7 @@ import openpyxl
 # ===============================================================================
 
 # Date range defaults
-DEFAULT_DAYS_LOOKBACK = 7  # Default to 7 days of data (changed from 365 to work within API limits)
+DEFAULT_DAYS_LOOKBACK = 5  # Changed to 5 days for longer analysis period
 DEFAULT_END_DATE = datetime.now().strftime('%Y-%m-%d')  # Today
 DEFAULT_START_DATE = (datetime.now() - timedelta(days=DEFAULT_DAYS_LOOKBACK)).strftime('%Y-%m-%d')
 
@@ -55,11 +55,10 @@ DEFAULT_RESULTS_LIMIT = 5  # Number of top results to display
 # Cryptocurrency data collection defaults
 DEFAULT_TEST_LIMIT = 10  # Limit analysis to this many cryptocurrencies (0 for all)
 DEFAULT_HISTORY_PERIODS = 5  # Number of chunks to fetch when collecting history
-DEFAULT_CHUNK_SIZE_DAYS = 0.2  # 4.8 hours (0.2 days) for ONE_MINUTE granularity (288 minutes)
+DEFAULT_CHUNK_SIZE_DAYS = .1  # Set to 1 day per chunk for 5-minute candles (288 candles per chunk is within API limit)
 
 # Granularity choices (time interval between candles)
-# If None, will be automatically calculated based on date range
-DEFAULT_GRANULARITY = "ONE_DAY"  # Changed from None to ONE_DAY for better API compatibility
+DEFAULT_GRANULARITY = "FIVE_MINUTE"  # Set to FIVE_MINUTE to always use 5-minute candles
 
 # Available granularity options and their API values:
 # "ONE_MINUTE"     - 1 minute candles
@@ -94,7 +93,7 @@ COMBINED_MASTER_FILENAME = "all_currencies_master.csv"
 # ===============================================================================
 import logging
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging.DEBUG,  # Changed from INFO to DEBUG for more detailed logging
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger('crypto_sideways_analyzer')
@@ -149,13 +148,29 @@ class CryptoSidewaysAnalyzer:
         self.start_timestamp = int(datetime.strptime(start_date, "%Y-%m-%d").timestamp())
         self.end_timestamp = int(datetime.strptime(end_date, "%Y-%m-%d").timestamp())
         
-        # Auto-select granularity if not specified
+        # Auto-select granularity if not specified, otherwise use the user-specified value
         if granularity is None:
             self.granularity = self.calculate_optimal_granularity()
         else:
             self.granularity = granularity
-            
-        logger.info(f"Using {self.granularity} granularity for time period {start_date} to {end_date}")
+            # If we're using FIVE_MINUTE granularity explicitly, make sure the time range is short enough
+            if self.granularity == "FIVE_MINUTE":
+                # Calculate the time difference in minutes
+                start_dt = datetime.strptime(self.start_date, "%Y-%m-%d")
+                end_dt = datetime.strptime(self.end_date, "%Y-%m-%d")
+                time_diff_minutes = (end_dt - start_dt).total_seconds() / 60
+                
+                max_minutes = 29 * 60  # 29 hours in minutes (max for FIVE_MINUTE with 350 candle limit)
+                
+                if time_diff_minutes > max_minutes:
+                    logger.warning(f"Time range of {time_diff_minutes/60:.1f} hours exceeds 29 hours (max for 5-minute candles).")
+                    logger.warning(f"Restricting end date to {start_dt + timedelta(minutes=max_minutes)}")
+                    # Adjust the end timestamp to stay within limits
+                    self.end_timestamp = self.start_timestamp + int(max_minutes * 60)
+                    self.end_date = datetime.fromtimestamp(self.end_timestamp).strftime('%Y-%m-%d')
+        
+        logger.info(f"Using {self.granularity} granularity for time period {start_date} to {self.end_date}")
+        logger.info(f"Start timestamp: {self.start_timestamp}, End timestamp: {self.end_timestamp}")
     
     def calculate_optimal_granularity(self):
         """
@@ -224,17 +239,105 @@ class CryptoSidewaysAnalyzer:
             DataFrame with OHLC data or None if error
         """
         try:
-            logger.info(f"Fetching historical data for {product_id}")
+            # Calculate total time range in seconds
+            start_dt = datetime.fromtimestamp(self.start_timestamp)
+            end_dt = datetime.fromtimestamp(self.end_timestamp)
+            time_diff_seconds = (end_dt - start_dt).total_seconds()
+            
+            logger.info(f"Fetching historical data for {product_id} from {start_dt} to {end_dt}")
+            logger.info(f"Using {self.granularity} granularity")
+            
+            # If using FIVE_MINUTE granularity and the time range is large, break into chunks
+            if self.granularity == "FIVE_MINUTE":
+                # Maximum candles per API call (Coinbase limit is around 350)
+                max_candles = 300  # Using slightly smaller value to be safe
+                
+                # Each 5-minute candle represents 300 seconds
+                max_seconds_per_call = max_candles * 300
+                
+                # If our time range exceeds what can be fetched in one request, split into multiple requests
+                if time_diff_seconds > max_seconds_per_call:
+                    chunks_needed = int(np.ceil(time_diff_seconds / max_seconds_per_call))
+                    logger.info(f"Date range requires {chunks_needed} API calls for 5-minute candles")
+                    
+                    # Get data in chunks and combine
+                    all_data = []
+                    for i in range(chunks_needed):
+                        chunk_start = self.start_timestamp + i * max_seconds_per_call
+                        chunk_end = min(self.end_timestamp, self.start_timestamp + (i + 1) * max_seconds_per_call)
+                        
+                        chunk_start_date = datetime.fromtimestamp(chunk_start).strftime('%Y-%m-%d %H:%M:%S')
+                        chunk_end_date = datetime.fromtimestamp(chunk_end).strftime('%Y-%m-%d %H:%M:%S')
+                        
+                        logger.info(f"Fetching chunk {i+1}/{chunks_needed} for {product_id}: {chunk_start_date} to {chunk_end_date}")
+                        
+                        # Add delay between API calls to avoid rate limiting
+                        if i > 0:
+                            time.sleep(1.5)
+                        
+                        # Get candles data from Coinbase for this chunk
+                        candles_response = self.client.get_public_candles(
+                            product_id=product_id,
+                            start=str(chunk_start),
+                            end=str(chunk_end),
+                            granularity=self.granularity
+                        )
+                        
+                        if hasattr(candles_response, 'candles') and candles_response.candles:
+                            chunk_data = []
+                            for candle in candles_response.candles:
+                                chunk_data.append({
+                                    'timestamp': int(candle.start),
+                                    'open': float(candle.open),
+                                    'high': float(candle.high),
+                                    'low': float(candle.low),
+                                    'close': float(candle.close),
+                                    'volume': float(candle.volume)
+                                })
+                            all_data.extend(chunk_data)
+                            logger.info(f"Fetched {len(chunk_data)} candles for chunk {i+1}")
+                        else:
+                            logger.warning(f"No data received for chunk {i+1}")
+                    
+                    if not all_data:
+                        logger.warning(f"No candle data available for {product_id} across all chunks")
+                        return None
+                    
+                    # Convert to DataFrame
+                    df = pd.DataFrame(all_data)
+                    df['date'] = pd.to_datetime(df['timestamp'], unit='s')
+                    df = df.set_index('date')
+                    df = df.sort_index()  # Ensure chronological order
+                    
+                    # Remove duplicates that might occur at chunk boundaries
+                    df = df[~df.index.duplicated(keep='first')]
+                    
+                    # Calculate daily returns for volatility analysis
+                    df['return'] = df['close'].pct_change()
+                    
+                    # Check the time interval between candles to verify we got 5-minute data
+                    if len(df) > 1:
+                        first_timestamp = df.iloc[0]['timestamp']
+                        second_timestamp = df.iloc[1]['timestamp']
+                        interval_seconds = second_timestamp - first_timestamp
+                        interval_minutes = interval_seconds / 60
+                        logger.info(f"Time interval between first two candles: {interval_minutes} minutes")
+                        
+                    logger.info(f"Fetched total of {len(df)} 5-minute candles for {product_id}")
+                    return df
+            
+            # For other granularities or shorter time periods, use single API call
+            logger.info(f"Fetching data in a single API call")
             
             # Coinbase API has rate limits, so add a small delay between requests
-            time.sleep(1.0)  # Increased delay to avoid rate limiting
+            time.sleep(1.0)
             
             # Get candles data from Coinbase
             candles_response = self.client.get_public_candles(
                 product_id=product_id,
                 start=str(self.start_timestamp),
                 end=str(self.end_timestamp),
-                granularity=self.granularity  # Use the granularity parameter
+                granularity=self.granularity
             )
             
             if not hasattr(candles_response, 'candles') or not candles_response.candles:
@@ -264,7 +367,15 @@ class CryptoSidewaysAnalyzer:
             # Calculate daily returns for volatility analysis
             df['return'] = df['close'].pct_change()
             
-            logger.info(f"Fetched {len(df)} data points for {product_id}")
+            # Verify the actual interval between candles
+            if len(df) > 1:
+                first_timestamp = df.iloc[0]['timestamp']
+                second_timestamp = df.iloc[1]['timestamp']
+                interval_seconds = second_timestamp - first_timestamp
+                interval_minutes = interval_seconds / 60
+                logger.info(f"Time interval between first two candles: {interval_minutes} minutes")
+            
+            logger.info(f"Fetched {len(df)} data points for {product_id} with {self.granularity} granularity")
             return df
             
         except Exception as e:
