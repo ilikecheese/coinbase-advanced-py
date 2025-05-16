@@ -29,8 +29,6 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from matplotlib.patches import Rectangle, Patch
 import mplfinance as mpf
-from coinbase.rest import RESTClient
-from config import API_KEY, API_SECRET
 import json
 import csv
 from pathlib import Path
@@ -99,7 +97,7 @@ logging.basicConfig(
 logger = logging.getLogger('crypto_sideways_analyzer')
 
 class CryptoSidewaysAnalyzer:
-    """Analyzes cryptocurrencies for sideways market patterns with volatility"""
+    """Analyzes cryptocurrencies for sideways market patterns with volatility, using only local CSV data."""
     
     # Define granularity options with their duration in minutes
     GRANULARITY_OPTIONS = {
@@ -116,25 +114,25 @@ class CryptoSidewaysAnalyzer:
     # Maximum candles allowed by Coinbase API
     MAX_CANDLES = 350
     
-    def __init__(self, api_key, api_secret, start_date, end_date, 
+    def __init__(self, data_dir="market_data", symbols=None, start_date=None, end_date=None, 
                 volatility_threshold=0.02, sideways_tolerance=0.1, 
-                touch_tolerance=0.01, min_touches=3, test_limit=0, granularity=None):
+                touch_tolerance=0.01, min_touches=3, test_limit=0):
         """
-        Initialize the analyzer with API credentials and parameters
+        Initialize the analyzer with parameters and local data directory
         
         Args:
-            api_key: Coinbase API key
-            api_secret: Coinbase API secret
-            start_date: Start date for analysis (YYYY-MM-DD)
-            end_date: End date for analysis (YYYY-MM-DD)
+            data_dir: Directory containing market data (default: market_data)
+            symbols: List of symbols to analyze (e.g., ['BTC-USDC']) or None for all
+            start_date: Start date for analysis (YYYY-MM-DD) or None for all
+            end_date: End date for analysis (YYYY-MM-DD) or None for all
             volatility_threshold: Minimum volatility (std dev of returns) to consider
             sideways_tolerance: Maximum variance in price range to qualify as sideways
             touch_tolerance: Percentage tolerance for price "touches" on support/resistance
             min_touches: Minimum number of touches to consider valid support/resistance
             test_limit: Limit the number of cryptocurrencies to analyze for testing
-            granularity: Time interval for candles (if None, will auto-calculate based on date range)
         """
-        self.client = RESTClient(api_key=api_key, api_secret=api_secret)
+        self.data_dir = data_dir
+        self.symbols = symbols
         self.start_date = start_date
         self.end_date = end_date
         self.volatility_threshold = volatility_threshold
@@ -143,245 +141,36 @@ class CryptoSidewaysAnalyzer:
         self.min_touches = min_touches
         self.test_limit = test_limit
         self.results = []
-        
-        # Convert dates to Unix timestamps (Coinbase API format)
-        self.start_timestamp = int(datetime.strptime(start_date, "%Y-%m-%d").timestamp())
-        self.end_timestamp = int(datetime.strptime(end_date, "%Y-%m-%d").timestamp())
-        
-        # Auto-select granularity if not specified, otherwise use the user-specified value
-        if granularity is None:
-            self.granularity = self.calculate_optimal_granularity()
-        else:
-            self.granularity = granularity
-            # If we're using FIVE_MINUTE granularity explicitly, make sure the time range is short enough
-            if self.granularity == "FIVE_MINUTE":
-                # Calculate the time difference in minutes
-                start_dt = datetime.strptime(self.start_date, "%Y-%m-%d")
-                end_dt = datetime.strptime(self.end_date, "%Y-%m-%d")
-                time_diff_minutes = (end_dt - start_dt).total_seconds() / 60
-                
-                max_minutes = 29 * 60  # 29 hours in minutes (max for FIVE_MINUTE with 350 candle limit)
-                
-                if time_diff_minutes > max_minutes:
-                    logger.warning(f"Time range of {time_diff_minutes/60:.1f} hours exceeds 29 hours (max for 5-minute candles).")
-                    logger.warning(f"Restricting end date to {start_dt + timedelta(minutes=max_minutes)}")
-                    # Adjust the end timestamp to stay within limits
-                    self.end_timestamp = self.start_timestamp + int(max_minutes * 60)
-                    self.end_date = datetime.fromtimestamp(self.end_timestamp).strftime('%Y-%m-%d')
-        
-        logger.info(f"Using {self.granularity} granularity for time period {start_date} to {self.end_date}")
-        logger.info(f"Start timestamp: {self.start_timestamp}, End timestamp: {self.end_timestamp}")
-    
-    def calculate_optimal_granularity(self):
-        """
-        Calculate the optimal granularity based on the date range to stay under 350 candles
-        
-        Returns:
-            str: The optimal granularity option
-        """
-        # Calculate the time difference in minutes
-        start_dt = datetime.strptime(self.start_date, "%Y-%m-%d")
-        end_dt = datetime.strptime(self.end_date, "%Y-%m-%d")
-        time_diff_minutes = (end_dt - start_dt).total_seconds() / 60
-        
-        # If we have less than 350 minutes, use ONE_MINUTE
-        if time_diff_minutes <= self.MAX_CANDLES:
-            return "ONE_MINUTE"
-            
-        # Calculate the minimum granularity needed
-        min_granularity_minutes = int(time_diff_minutes / self.MAX_CANDLES) + 1
-        
-        # Find the smallest granularity option that fits
-        for option, minutes in sorted(self.GRANULARITY_OPTIONS.items(), key=lambda x: x[1]):
-            if minutes >= min_granularity_minutes:
-                return option
-                
-        # If no option fits within 350 candles, use largest available (ONE_DAY)
-        return "ONE_DAY"
-        
-    def fetch_products(self):
-        """Fetch all available cryptocurrency products from Coinbase"""
-        try:
-            products = self.client.get_public_products(product_type="SPOT")
-            
-            # Print all available product IDs for debugging
-            all_product_ids = [p.product_id for p in products.products]
-            print(f"All available product IDs: {all_product_ids[:20]} ... (total: {len(all_product_ids)})")
-            
-            # Look for any products containing "USDC"
-            usdc_products_any = [p for p in products.products if "USDC" in p.product_id]
-            print(f"Products containing USDC: {[p.product_id for p in usdc_products_any]}")
-            
-            # Filter for USDC pairs
-            usdc_products = [p for p in products.products if p.product_id.endswith('-USDC')]
-            logger.info(f"Found {len(usdc_products)} USDC trading pairs")
-            
-            # If no USDC pairs found, fall back to USD pairs
-            if not usdc_products:
-                print("No USDC pairs found. Falling back to USD pairs.")
-                usd_products = [p for p in products.products if p.product_id.endswith('-USD')]
-                logger.info(f"Found {len(usd_products)} USD trading pairs")
-                return usd_products
-                
-            return usdc_products
-        except Exception as e:
-            logger.error(f"Error fetching products: {e}")
-            return []
-            
-    def fetch_historical_data(self, product_id):
-        """
-        Fetch historical OHLC data for a specific product
-        
-        Args:
-            product_id: The product identifier (e.g., 'BTC-USD')
-            
-        Returns:
-            DataFrame with OHLC data or None if error
-        """
-        try:
-            # Calculate total time range in seconds
-            start_dt = datetime.fromtimestamp(self.start_timestamp)
-            end_dt = datetime.fromtimestamp(self.end_timestamp)
-            time_diff_seconds = (end_dt - start_dt).total_seconds()
-            
-            logger.info(f"Fetching historical data for {product_id} from {start_dt} to {end_dt}")
-            logger.info(f"Using {self.granularity} granularity")
-            
-            # If using FIVE_MINUTE granularity and the time range is large, break into chunks
-            if self.granularity == "FIVE_MINUTE":
-                # Maximum candles per API call (Coinbase limit is around 350)
-                max_candles = 300  # Using slightly smaller value to be safe
-                
-                # Each 5-minute candle represents 300 seconds
-                max_seconds_per_call = max_candles * 300
-                
-                # If our time range exceeds what can be fetched in one request, split into multiple requests
-                if time_diff_seconds > max_seconds_per_call:
-                    chunks_needed = int(np.ceil(time_diff_seconds / max_seconds_per_call))
-                    logger.info(f"Date range requires {chunks_needed} API calls for 5-minute candles")
-                    
-                    # Get data in chunks and combine
-                    all_data = []
-                    for i in range(chunks_needed):
-                        chunk_start = self.start_timestamp + i * max_seconds_per_call
-                        chunk_end = min(self.end_timestamp, self.start_timestamp + (i + 1) * max_seconds_per_call)
-                        
-                        chunk_start_date = datetime.fromtimestamp(chunk_start).strftime('%Y-%m-%d %H:%M:%S')
-                        chunk_end_date = datetime.fromtimestamp(chunk_end).strftime('%Y-%m-%d %H:%M:%S')
-                        
-                        logger.info(f"Fetching chunk {i+1}/{chunks_needed} for {product_id}: {chunk_start_date} to {chunk_end_date}")
-                        
-                        # Add delay between API calls to avoid rate limiting
-                        if i > 0:
-                            time.sleep(1.5)
-                        
-                        # Get candles data from Coinbase for this chunk
-                        candles_response = self.client.get_public_candles(
-                            product_id=product_id,
-                            start=str(chunk_start),
-                            end=str(chunk_end),
-                            granularity=self.granularity
-                        )
-                        
-                        if hasattr(candles_response, 'candles') and candles_response.candles:
-                            chunk_data = []
-                            for candle in candles_response.candles:
-                                chunk_data.append({
-                                    'timestamp': int(candle.start),
-                                    'open': float(candle.open),
-                                    'high': float(candle.high),
-                                    'low': float(candle.low),
-                                    'close': float(candle.close),
-                                    'volume': float(candle.volume)
-                                })
-                            all_data.extend(chunk_data)
-                            logger.info(f"Fetched {len(chunk_data)} candles for chunk {i+1}")
-                        else:
-                            logger.warning(f"No data received for chunk {i+1}")
-                    
-                    if not all_data:
-                        logger.warning(f"No candle data available for {product_id} across all chunks")
-                        return None
-                    
-                    # Convert to DataFrame
-                    df = pd.DataFrame(all_data)
-                    df['date'] = pd.to_datetime(df['timestamp'], unit='s')
-                    df = df.set_index('date')
-                    df = df.sort_index()  # Ensure chronological order
-                    
-                    # Remove duplicates that might occur at chunk boundaries
-                    df = df[~df.index.duplicated(keep='first')]
-                    
-                    # Calculate daily returns for volatility analysis
-                    df['return'] = df['close'].pct_change()
-                    
-                    # Check the time interval between candles to verify we got 5-minute data
-                    if len(df) > 1:
-                        first_timestamp = df.iloc[0]['timestamp']
-                        second_timestamp = df.iloc[1]['timestamp']
-                        interval_seconds = second_timestamp - first_timestamp
-                        interval_minutes = interval_seconds / 60
-                        logger.info(f"Time interval between first two candles: {interval_minutes} minutes")
-                        
-                    logger.info(f"Fetched total of {len(df)} 5-minute candles for {product_id}")
-                    return df
-            
-            # For other granularities or shorter time periods, use single API call
-            logger.info(f"Fetching data in a single API call")
-            
-            # Coinbase API has rate limits, so add a small delay between requests
-            time.sleep(1.0)
-            
-            # Get candles data from Coinbase
-            candles_response = self.client.get_public_candles(
-                product_id=product_id,
-                start=str(self.start_timestamp),
-                end=str(self.end_timestamp),
-                granularity=self.granularity
-            )
-            
-            if not hasattr(candles_response, 'candles') or not candles_response.candles:
-                logger.warning(f"No candle data available for {product_id}")
-                return None
-                
-            # Convert to DataFrame
-            data = []
-            for candle in candles_response.candles:
-                data.append({
-                    'timestamp': int(candle.start),
-                    'open': float(candle.open),
-                    'high': float(candle.high),
-                    'low': float(candle.low),
-                    'close': float(candle.close),
-                    'volume': float(candle.volume)
-                })
-                
-            if not data:
-                return None
-                
-            df = pd.DataFrame(data)
-            df['date'] = pd.to_datetime(df['timestamp'], unit='s')
-            df = df.set_index('date')
-            df = df.sort_index()  # Ensure chronological order
-            
-            # Calculate daily returns for volatility analysis
-            df['return'] = df['close'].pct_change()
-            
-            # Verify the actual interval between candles
-            if len(df) > 1:
-                first_timestamp = df.iloc[0]['timestamp']
-                second_timestamp = df.iloc[1]['timestamp']
-                interval_seconds = second_timestamp - first_timestamp
-                interval_minutes = interval_seconds / 60
-                logger.info(f"Time interval between first two candles: {interval_minutes} minutes")
-            
-            logger.info(f"Fetched {len(df)} data points for {product_id} with {self.granularity} granularity")
-            return df
-            
-        except Exception as e:
-            logger.error(f"Error fetching data for {product_id}: {e}")
+
+    def get_available_symbols(self):
+        """Return all symbols with master_data.csv in the data_dir."""
+        symbols = []
+        for entry in os.listdir(self.data_dir):
+            symbol_dir = os.path.join(self.data_dir, entry)
+            if os.path.isdir(symbol_dir):
+                master_path = os.path.join(symbol_dir, "master_data.csv")
+                if os.path.exists(master_path):
+                    symbols.append(entry.replace('_', '-'))
+        return symbols
+
+    def load_local_data(self, symbol):
+        """Load master_data.csv for a symbol, filter by date if needed."""
+        symbol_dir = os.path.join(self.data_dir, symbol.replace('-', '_'))
+        master_path = os.path.join(symbol_dir, "master_data.csv")
+        if not os.path.exists(master_path):
+            logger.warning(f"No local data found for {symbol}")
             return None
-            
+        df = pd.read_csv(master_path)
+        if 'date' in df.columns:
+            df['date'] = pd.to_datetime(df['date'])
+            df = df.sort_values('date')
+            if self.start_date:
+                df = df[df['date'] >= pd.to_datetime(self.start_date)]
+            if self.end_date:
+                df = df[df['date'] <= pd.to_datetime(self.end_date)]
+            df = df.set_index('date')
+        return df
+
     def calculate_volatility(self, df):
         """Calculate volatility as the standard deviation of returns"""
         if df is None or len(df) < 10:  # Need enough data points
@@ -519,18 +308,9 @@ class CryptoSidewaysAnalyzer:
             
         return touches
         
-    def analyze_product(self, product_id):
-        """
-        Analyze a single product for sideways volatility pattern
-        
-        Args:
-            product_id: The product to analyze (e.g., 'BTC-USD')
-            
-        Returns:
-            dict: Analysis results or None if criteria not met
-        """
-        # Fetch historical data
-        df = self.fetch_historical_data(product_id)
+    def analyze_product(self, symbol):
+        """Analyze a single symbol using local data only."""
+        df = self.load_local_data(symbol)
         if df is None or len(df) < 30:
             return None
             
@@ -539,14 +319,14 @@ class CryptoSidewaysAnalyzer:
         
         # Check if volatility meets threshold
         if volatility < self.volatility_threshold:
-            logger.info(f"{product_id} volatility {volatility:.2%} below threshold {self.volatility_threshold:.2%}")
+            logger.info(f"{symbol} volatility {volatility:.2%} below threshold {self.volatility_threshold:.2%}")
             return None
             
         # Check if market is sideways
         is_sideways, sideways_details = self.is_sideways_market(df)
         
         if not is_sideways:
-            logger.info(f"{product_id} is not in a sideways market")
+            logger.info(f"{symbol} is not in a sideways market")
             return None
             
         # Find support and resistance levels
@@ -564,7 +344,7 @@ class CryptoSidewaysAnalyzer:
         
         # If we don't have valid levels, this isn't a good candidate
         if not valid_support or not valid_resistance:
-            logger.info(f"{product_id} doesn't have strong support/resistance levels")
+            logger.info(f"{symbol} doesn't have strong support/resistance levels")
             return None
             
         # Get the best support and resistance levels (most touches)
@@ -572,14 +352,11 @@ class CryptoSidewaysAnalyzer:
         best_resistance = max(valid_resistance, key=lambda x: x[1]) if valid_resistance else (0, 0)
         
         # Calculate range as percentage
-        if best_support[0] > 0:
-            range_percent = (best_resistance[0] - best_support[0]) / best_support[0]
-        else:
-            range_percent = 0
-            
+        range_percent = (best_resistance[0] - best_support[0]) / best_support[0] if best_support[0] > 0 else 0
+        
         # Prepare results
         result = {
-            'product_id': product_id,
+            'product_id': symbol,
             'volatility': volatility,
             'is_sideways': is_sideways,
             'support_level': best_support[0],
@@ -593,7 +370,7 @@ class CryptoSidewaysAnalyzer:
             'data_points': len(df)
         }
         
-        logger.info(f"Found candidate: {product_id} - Volatility: {volatility:.2%}, "
+        logger.info(f"Found candidate: {symbol} - Volatility: {volatility:.2%}, "
                    f"Support: ${best_support[0]:.2f} ({best_support[1]} touches), "
                    f"Resistance: ${best_resistance[0]:.2f} ({best_resistance[1]} touches)")
                    
@@ -915,38 +692,27 @@ class CryptoSidewaysAnalyzer:
 
     def run_analysis(self):
         """
-        Run the analysis on all USDC cryptocurrency pairs
+        Run the analysis on all available local symbols
         
         Returns:
             list: Sorted results with the best candidates first
         """
-        # Get all products
-        products = self.fetch_products()
+        if self.symbols:
+            symbols = self.symbols
+        else:
+            symbols = self.get_available_symbols()
         
-        if not products:
-            logger.error("No products found to analyze")
-            return []
+        if self.test_limit > 0:
+            symbols = symbols[:self.test_limit]
             
         results = []
         
-        # Process each product
-        for i, product in enumerate(products):
-            if self.test_limit > 0 and i >= self.test_limit:
-                break
-            
-            product_id = product.product_id
-            
-            # Skip stablecoins as they usually have very low volatility
-            if any(stablecoin in product_id for stablecoin in ['USDC-', 'USDT-', 'DAI-', 'BUSD-']):
-                continue
-                
-            result = self.analyze_product(product_id)
+        # Process each symbol
+        for symbol in symbols:
+            result = self.analyze_product(symbol)
             if result is not None:
                 results.append(result)
                 
-            # Sleep briefly to avoid hitting API rate limits
-            time.sleep(1.0)  # Increased delay to prevent rate limits
-            
         # Sort results by volatility (highest first)
         results.sort(key=lambda x: x['volatility'], reverse=True)
         self.results = results
@@ -994,7 +760,7 @@ class CryptoSidewaysAnalyzer:
 
 def parse_arguments():
     """Parse command line arguments"""
-    parser = argparse.ArgumentParser(description='Analyze cryptocurrencies for sideways volatility patterns')
+    parser = argparse.ArgumentParser(description='Analyze local cryptocurrency data for sideways volatility patterns')
     
     # Date range parameters
     parser.add_argument('--start', type=str, 
@@ -1015,16 +781,8 @@ def parse_arguments():
                       help=f'Maximum number of results to display (default: {DEFAULT_RESULTS_LIMIT})')
     parser.add_argument('--test-limit', type=int, default=DEFAULT_TEST_LIMIT,
                       help=f'Limit the number of cryptocurrencies to analyze for testing (default: {DEFAULT_TEST_LIMIT}, 0 for no limit)')
-    parser.add_argument('--granularity', type=str, default=DEFAULT_GRANULARITY, choices=[
-                      "ONE_MINUTE", "FIVE_MINUTE", "FIFTEEN_MINUTE", "THIRTY_MINUTE",
-                      "ONE_HOUR", "TWO_HOUR", "SIX_HOUR", "ONE_DAY"],
-                      help='Candle time interval (default: auto-calculated based on date range)')
-    parser.add_argument('--collect-history', action='store_true',
-                      help='Collect historical data incrementally and save to spreadsheets')
-    parser.add_argument('--history-periods', type=int, default=DEFAULT_HISTORY_PERIODS,
-                      help=f'Number of time periods to collect when using --collect-history (default: {DEFAULT_HISTORY_PERIODS})')
-    parser.add_argument('--file-format', type=str, default=DEFAULT_FILE_FORMAT, choices=['csv'],
-                      help='Output file format for saving data (csv only)')
+    parser.add_argument('--symbols', type=str, nargs="*",
+                      help='Specific symbols to analyze (e.g., BTC-USDC)')
     
     return parser.parse_args()
 
@@ -1032,88 +790,22 @@ def main():
     """Main function to run the analysis"""
     args = parse_arguments()
     
-    print(f"Crypto Sideways Market Analyzer")
-    print(f"Time period: {args.start} to {args.end}")
+    print(f"Crypto Sideways Market Analyzer (Local Data Only)")
+    print(f"Time period: {args.start or 'ALL'} to {args.end or 'ALL'}")
     
-    try:
-        # Create analyzer with parameters from arguments
-        analyzer = CryptoSidewaysAnalyzer(
-            api_key=API_KEY,
-            api_secret=API_SECRET,
-            start_date=args.start,
-            end_date=args.end,
-            volatility_threshold=args.volatility,
-            touch_tolerance=args.tolerance,
-            min_touches=args.min_touches,
-            test_limit=args.test_limit,
-            granularity=args.granularity
-        )
-        
-        if args.collect_history:
-            print(f"Collecting historical data incrementally for {args.history_periods} periods...")
-            products = analyzer.fetch_products()
-            count = 0
-            for i, product in enumerate(products):
-                # Apply test limit if specified
-                if args.test_limit > 0 and i >= args.test_limit:
-                    break
-                    
-                product_id = product.product_id
-                # Skip stablecoins as they typically have low volatility
-                if any(stablecoin in product_id for stablecoin in ['USDC-', 'USDT-', 'DAI-', 'BUSD-']):
-                    continue
-                
-                print(f"Collecting data for {product_id} ({i+1}/{min(len(products), args.test_limit) if args.test_limit > 0 else len(products)})")
-                analyzer.fetch_and_save_historical_data_incremental(product_id, periods=args.history_periods)
-                count += 1
-                
-            print(f"Historical data collection completed for {count} cryptocurrencies.")
-            
-            # Generate the combined master file with all cryptocurrencies
-            print("\nGenerating combined master file for all cryptocurrencies...")
-            combined_master_file = analyzer.update_combined_master_file()
-            if combined_master_file:
-                print(f"Combined master file created: {combined_master_file}")
-                print(f"This file contains data from all cryptocurrencies and can be used for cross-currency analysis.")
-        else:
-            print(f"Analyzing Coinbase cryptocurrencies for sideways volatility patterns...")
-            
-            # Run the analysis
-            results = analyzer.run_analysis()
-            
-            # Print results
-            analyzer.print_results(limit=args.limit)
-            
-            # Save analysis results
-            analyzer.save_analysis_results()
-            
-            # Update combined master file
-            print("\nUpdating combined master file for all cryptocurrencies...")
-            combined_master_file = analyzer.update_combined_master_file()
-            if combined_master_file:
-                print(f"Combined master file saved to {combined_master_file}")
-            
-            # Visualize the top result
-            if results:
-                top_result = results[0]
-                product_id = top_result['product_id']
-                print(f"\nGenerating visualization for {product_id}...")
-                df = analyzer.fetch_historical_data(product_id)
-                
-                # Get all support and resistance levels
-                support_levels = [result['support_level'] for result in results if result['product_id'] == product_id]
-                resistance_levels = [result['resistance_level'] for result in results if result['product_id'] == product_id]
-                
-                # Visualize the product
-                analyzer.visualize_product(product_id, df, support_levels, resistance_levels)
-                print(f"Visualization saved to plots/{product_id.replace('-', '_')}_{args.start}_to_{args.end}.png")
-            else:
-                print("No suitable cryptocurrencies found to visualize.")
-        
-    except Exception as e:
-        logger.error(f"Error running analysis: {e}")
-        import traceback
-        traceback.print_exc()
+    analyzer = CryptoSidewaysAnalyzer(
+        data_dir="market_data",
+        symbols=args.symbols,
+        start_date=args.start,
+        end_date=args.end,
+        volatility_threshold=args.volatility,
+        touch_tolerance=args.tolerance,
+        min_touches=args.min_touches,
+        test_limit=args.test_limit
+    )
+    
+    results = analyzer.run_analysis()
+    analyzer.print_results(limit=args.limit)
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,77 @@
+
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>Crypto Market Data Quality Report</title>
+                <style>
+                    body { font-family: Arial, sans-serif; margin: 20px; }
+                    h1 { color: #333; }
+                    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+                    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+                    th { background-color: #f2f2f2; }
+                    tr:nth-child(even) { background-color: #f9f9f9; }
+                    .good { color: green; }
+                    .warning { color: orange; }
+                    .error { color: red; }
+                    .summary { margin: 20px 0; padding: 15px; background-color: #f0f0f0; border-radius: 5px; }
+                </style>
+            </head>
+            <body>
+                <h1>Crypto Market Data Quality Report</h1>
+                <p>Generated on: 2025-05-16 07:39:05</p>
+                
+                <div class="summary">
+                    <h2>Summary</h2>
+                    <p>Analyzed data for 2 cryptocurrencies</p>
+                </div>
+                
+                <h2>Detailed Results</h2>
+                <table>
+                    <tr>
+                        <th>Cryptocurrency</th>
+            <th>gaps_count</th>
+<th>completeness_pct</th>
+<th>anomalies_count</th>
+<th>invalid_values_count</th>
+<th>inconsistencies_count</th>
+<th>open_close_mismatch_count</th>
+<th>zero_volume_count</th>
+<th>volume_outliers_count</th>
+</tr>
+<tr>
+<td>BTC-USDC</td>
+<td class='warning'>1.00</td>
+<td class='error'>51.89%</td>
+<td class='error'>132.00</td>
+<td class='good'>0.00</td>
+<td class='good'>0.00</td>
+<td class='warning'>1.00</td>
+<td class='good'>0.00</td>
+<td class='error'>102.00</td>
+</tr>
+<tr>
+<td>ETH-USDC</td>
+<td class='good'>0.00</td>
+<td class='good'>100.01%</td>
+<td class='error'>114.00</td>
+<td class='good'>0.00</td>
+<td class='good'>0.00</td>
+<td class='warning'>1.00</td>
+<td class='good'>0.00</td>
+<td class='error'>120.00</td>
+</tr>
+
+                </table>
+                
+                <div class="summary">
+                    <h2>Recommendations</h2>
+                    <ul>
+                        <li>Address gaps in data continuity for any cryptocurrency with completeness below 99%</li>
+                        <li>Investigate price anomalies, especially if there are more than 10</li>
+                        <li>Review OHLC inconsistencies as they may indicate data corruption</li>
+                        <li>Check zero volume periods as they may represent exchange downtimes</li>
+                    </ul>
+                </div>
+            </body>
+            </html>
+            
