@@ -2,23 +2,27 @@ class Portfolio:
     def __init__(self, initial_cash, initial_crypto, fee_pct=0.0):
         self.cash = initial_cash
         self.crypto = initial_crypto
-        self.fee_pct = fee_pct
+        self.fee_pct = fee_pct  # Transaction fee percentage (e.g., 0.1 for 0.1%)
         self.history = []
 
     def buy(self, price, pct):
+        # Calculate how much cash to spend and the fee
         amount_to_spend = self.cash * pct
-        fee = amount_to_spend * self.fee_pct / 100
+        fee = amount_to_spend * self.fee_pct / 100  # Fee is a percentage of cash spent
         crypto_bought = (amount_to_spend - fee) / price
         self.cash -= amount_to_spend
         self.crypto += crypto_bought
+        # Record trade with fee
         self.history.append(("buy", price, crypto_bought, fee))
 
     def sell(self, price, pct):
+        # Calculate how much crypto to sell and the fee
         crypto_to_sell = self.crypto * pct
         proceeds = crypto_to_sell * price
-        fee = proceeds * self.fee_pct / 100
+        fee = proceeds * self.fee_pct / 100  # Fee is a percentage of proceeds
         self.cash += proceeds - fee
         self.crypto -= crypto_to_sell
+        # Record trade with fee
         self.history.append(("sell", price, crypto_to_sell, fee))
 
     def value(self, price):
