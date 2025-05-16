@@ -196,7 +196,7 @@ class RESTBase(APIBase):
                 "Unauthenticated request to private endpoint. If you wish to access private endpoints, you must provide your API key and secret when initializing the RESTClient."
             )
 
-        headers = self.set_headers(http_method, url_path)
+        headers = self.set_headers(http_method, url_path, public=public)
 
         if params is not None:
             params = {key: value for key, value in params.items() if value is not None}
@@ -241,20 +241,16 @@ class RESTBase(APIBase):
 
         return response_data
 
-    def set_headers(self, method, path):
+    def set_headers(self, method, path, public=False):
         """
         :meta private:
         """
         uri = f"{method} {self.base_url}{path}"
-
-        return {
+        headers = {
             "User-Agent": USER_AGENT,
             "Content-Type": "application/json",
-            **(
-                {
-                    "Authorization": f"Bearer {jwt_generator.build_rest_jwt(uri, self.api_key, self.api_secret)}",
-                }
-                if self.is_authenticated
-                else {}
-            ),
         }
+        # If authenticated, always add Authorization header (even for public endpoints)
+        if self.is_authenticated:
+            headers["Authorization"] = f"Bearer {jwt_generator.build_rest_jwt(uri, self.api_key, self.api_secret)}"
+        return headers

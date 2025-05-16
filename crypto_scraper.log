@@ -1,0 +1,216 @@
+2025-05-16 10:33:41,717 - crypto_data_scraper - INFO - CryptoDataScraper initialized to collect 10 days of ONE_MINUTE candles
+2025-05-16 10:33:41,718 - crypto_data_scraper - INFO - Time range: 2025-05-06 10:33:41 to 2025-05-16 10:33:41
+2025-05-16 10:33:41,718 - crypto_data_scraper - INFO - Will scrape data for 2 specified symbols
+2025-05-16 10:33:41,718 - crypto_data_scraper - INFO - Processing 1/2: AMP-USDC
+2025-05-16 10:33:41,718 - crypto_data_scraper - INFO - Fetching historical data for AMP-USDC
+2025-05-16 10:33:41,719 - crypto_data_scraper - INFO - Need to make 48 API calls to fetch all data for AMP-USDC
+2025-05-16 10:33:41,719 - crypto_data_scraper - INFO - Fetching chunk 1/48 for AMP-USDC: 2025-05-06 10:33:41 to 2025-05-06 15:33:41
+2025-05-16 10:33:41,885 - crypto_data_scraper - INFO - Fetched 103 candles for chunk 1
+2025-05-16 10:33:41,886 - crypto_data_scraper - INFO - Fetching chunk 2/48 for AMP-USDC: 2025-05-06 15:33:41 to 2025-05-06 20:33:41
+2025-05-16 10:33:43,057 - crypto_data_scraper - INFO - Fetched 128 candles for chunk 2
+2025-05-16 10:33:43,057 - crypto_data_scraper - INFO - Fetching chunk 3/48 for AMP-USDC: 2025-05-06 20:33:41 to 2025-05-07 01:33:41
+2025-05-16 10:33:44,162 - crypto_data_scraper - INFO - Fetched 91 candles for chunk 3
+2025-05-16 10:33:44,163 - crypto_data_scraper - INFO - Fetching chunk 4/48 for AMP-USDC: 2025-05-07 01:33:41 to 2025-05-07 06:33:41
+2025-05-16 10:33:45,324 - crypto_data_scraper - INFO - Fetched 61 candles for chunk 4
+2025-05-16 10:33:45,324 - crypto_data_scraper - INFO - Fetching chunk 5/48 for AMP-USDC: 2025-05-07 06:33:41 to 2025-05-07 11:33:41
+2025-05-16 10:33:46,434 - crypto_data_scraper - INFO - Fetched 93 candles for chunk 5
+2025-05-16 10:33:46,444 - crypto_data_scraper - INFO - Fetching chunk 6/48 for AMP-USDC: 2025-05-07 11:33:41 to 2025-05-07 16:33:41
+2025-05-16 10:33:47,610 - crypto_data_scraper - INFO - Fetched 83 candles for chunk 6
+2025-05-16 10:33:47,610 - crypto_data_scraper - INFO - Fetching chunk 7/48 for AMP-USDC: 2025-05-07 16:33:41 to 2025-05-07 21:33:41
+2025-05-16 10:33:48,723 - crypto_data_scraper - INFO - Fetched 91 candles for chunk 7
+2025-05-16 10:33:48,731 - crypto_data_scraper - INFO - Fetching chunk 8/48 for AMP-USDC: 2025-05-07 21:33:41 to 2025-05-08 02:33:41
+2025-05-16 10:33:49,901 - crypto_data_scraper - INFO - Fetched 147 candles for chunk 8
+2025-05-16 10:33:49,901 - crypto_data_scraper - INFO - Fetching chunk 9/48 for AMP-USDC: 2025-05-08 02:33:41 to 2025-05-08 07:33:41
+2025-05-16 10:33:51,014 - crypto_data_scraper - INFO - Fetched 127 candles for chunk 9
+2025-05-16 10:33:51,015 - crypto_data_scraper - INFO - Fetching chunk 10/48 for AMP-USDC: 2025-05-08 07:33:41 to 2025-05-08 12:33:41
+2025-05-16 10:33:52,254 - crypto_data_scraper - INFO - Fetched 169 candles for chunk 10
+2025-05-16 10:33:52,254 - crypto_data_scraper - INFO - Fetching chunk 11/48 for AMP-USDC: 2025-05-08 12:33:41 to 2025-05-08 17:33:41
+2025-05-16 10:33:53,372 - crypto_data_scraper - INFO - Fetched 216 candles for chunk 11
+2025-05-16 10:33:53,372 - crypto_data_scraper - INFO - Fetching chunk 12/48 for AMP-USDC: 2025-05-08 17:33:41 to 2025-05-08 22:33:41
+2025-05-16 10:33:54,536 - crypto_data_scraper - INFO - Fetched 142 candles for chunk 12
+2025-05-16 10:33:54,537 - crypto_data_scraper - INFO - Fetching chunk 13/48 for AMP-USDC: 2025-05-08 22:33:41 to 2025-05-09 03:33:41
+2025-05-16 10:33:55,702 - crypto_data_scraper - INFO - Fetched 153 candles for chunk 13
+2025-05-16 10:33:55,703 - crypto_data_scraper - INFO - Fetching chunk 14/48 for AMP-USDC: 2025-05-09 03:33:41 to 2025-05-09 08:33:41
+2025-05-16 10:33:56,815 - crypto_data_scraper - INFO - Fetched 177 candles for chunk 14
+2025-05-16 10:33:56,816 - crypto_data_scraper - INFO - Fetching chunk 15/48 for AMP-USDC: 2025-05-09 08:33:41 to 2025-05-09 13:33:41
+2025-05-16 10:33:57,996 - crypto_data_scraper - INFO - Fetched 202 candles for chunk 15
+2025-05-16 10:33:57,996 - crypto_data_scraper - INFO - Fetching chunk 16/48 for AMP-USDC: 2025-05-09 13:33:41 to 2025-05-09 18:33:41
+2025-05-16 10:33:59,115 - crypto_data_scraper - INFO - Fetched 157 candles for chunk 16
+2025-05-16 10:33:59,115 - crypto_data_scraper - INFO - Fetching chunk 17/48 for AMP-USDC: 2025-05-09 18:33:41 to 2025-05-09 23:33:41
+2025-05-16 10:34:00,321 - crypto_data_scraper - INFO - Fetched 148 candles for chunk 17
+2025-05-16 10:34:00,321 - crypto_data_scraper - INFO - Fetching chunk 18/48 for AMP-USDC: 2025-05-09 23:33:41 to 2025-05-10 04:33:41
+2025-05-16 10:34:01,435 - crypto_data_scraper - INFO - Fetched 136 candles for chunk 18
+2025-05-16 10:34:01,436 - crypto_data_scraper - INFO - Fetching chunk 19/48 for AMP-USDC: 2025-05-10 04:33:41 to 2025-05-10 09:33:41
+2025-05-16 10:34:02,562 - crypto_data_scraper - INFO - Fetched 140 candles for chunk 19
+2025-05-16 10:34:02,563 - crypto_data_scraper - INFO - Fetching chunk 20/48 for AMP-USDC: 2025-05-10 09:33:41 to 2025-05-10 14:33:41
+2025-05-16 10:34:03,679 - crypto_data_scraper - INFO - Fetched 160 candles for chunk 20
+2025-05-16 10:34:03,680 - crypto_data_scraper - INFO - Fetching chunk 21/48 for AMP-USDC: 2025-05-10 14:33:41 to 2025-05-10 19:33:41
+2025-05-16 10:34:04,787 - crypto_data_scraper - INFO - Fetched 173 candles for chunk 21
+2025-05-16 10:34:04,788 - crypto_data_scraper - INFO - Fetching chunk 22/48 for AMP-USDC: 2025-05-10 19:33:41 to 2025-05-11 00:33:41
+2025-05-16 10:34:05,900 - crypto_data_scraper - INFO - Fetched 137 candles for chunk 22
+2025-05-16 10:34:05,901 - crypto_data_scraper - INFO - Fetching chunk 23/48 for AMP-USDC: 2025-05-11 00:33:41 to 2025-05-11 05:33:41
+2025-05-16 10:34:07,094 - crypto_data_scraper - INFO - Fetched 88 candles for chunk 23
+2025-05-16 10:34:07,094 - crypto_data_scraper - INFO - Fetching chunk 24/48 for AMP-USDC: 2025-05-11 05:33:41 to 2025-05-11 10:33:41
+2025-05-16 10:34:08,211 - crypto_data_scraper - INFO - Fetched 131 candles for chunk 24
+2025-05-16 10:34:08,212 - crypto_data_scraper - INFO - Fetching chunk 25/48 for AMP-USDC: 2025-05-11 10:33:41 to 2025-05-11 15:33:41
+2025-05-16 10:34:09,323 - crypto_data_scraper - INFO - Fetched 118 candles for chunk 25
+2025-05-16 10:34:09,323 - crypto_data_scraper - INFO - Fetching chunk 26/48 for AMP-USDC: 2025-05-11 15:33:41 to 2025-05-11 20:33:41
+2025-05-16 10:34:10,501 - crypto_data_scraper - INFO - Fetched 112 candles for chunk 26
+2025-05-16 10:34:10,502 - crypto_data_scraper - INFO - Fetching chunk 27/48 for AMP-USDC: 2025-05-11 20:33:41 to 2025-05-12 01:33:41
+2025-05-16 10:34:11,610 - crypto_data_scraper - INFO - Fetched 132 candles for chunk 27
+2025-05-16 10:34:11,610 - crypto_data_scraper - INFO - Fetching chunk 28/48 for AMP-USDC: 2025-05-12 01:33:41 to 2025-05-12 06:33:41
+2025-05-16 10:34:12,728 - crypto_data_scraper - INFO - Fetched 131 candles for chunk 28
+2025-05-16 10:34:12,729 - crypto_data_scraper - INFO - Fetching chunk 29/48 for AMP-USDC: 2025-05-12 06:33:41 to 2025-05-12 11:33:41
+2025-05-16 10:34:13,897 - crypto_data_scraper - INFO - Fetched 173 candles for chunk 29
+2025-05-16 10:34:13,897 - crypto_data_scraper - INFO - Fetching chunk 30/48 for AMP-USDC: 2025-05-12 11:33:41 to 2025-05-12 16:33:41
+2025-05-16 10:34:15,018 - crypto_data_scraper - INFO - Fetched 162 candles for chunk 30
+2025-05-16 10:34:15,019 - crypto_data_scraper - INFO - Fetching chunk 31/48 for AMP-USDC: 2025-05-12 16:33:41 to 2025-05-12 21:33:41
+2025-05-16 10:34:16,234 - crypto_data_scraper - INFO - Fetched 125 candles for chunk 31
+2025-05-16 10:34:16,234 - crypto_data_scraper - INFO - Fetching chunk 32/48 for AMP-USDC: 2025-05-12 21:33:41 to 2025-05-13 02:33:41
+2025-05-16 10:34:17,340 - crypto_data_scraper - INFO - Fetched 93 candles for chunk 32
+2025-05-16 10:34:17,341 - crypto_data_scraper - INFO - Fetching chunk 33/48 for AMP-USDC: 2025-05-13 02:33:41 to 2025-05-13 07:33:41
+2025-05-16 10:34:18,510 - crypto_data_scraper - INFO - Fetched 95 candles for chunk 33
+2025-05-16 10:34:18,510 - crypto_data_scraper - INFO - Fetching chunk 34/48 for AMP-USDC: 2025-05-13 07:33:41 to 2025-05-13 12:33:41
+2025-05-16 10:34:19,639 - crypto_data_scraper - INFO - Fetched 155 candles for chunk 34
+2025-05-16 10:34:19,640 - crypto_data_scraper - INFO - Fetching chunk 35/48 for AMP-USDC: 2025-05-13 12:33:41 to 2025-05-13 17:33:41
+2025-05-16 10:34:20,747 - crypto_data_scraper - INFO - Fetched 183 candles for chunk 35
+2025-05-16 10:34:20,748 - crypto_data_scraper - INFO - Fetching chunk 36/48 for AMP-USDC: 2025-05-13 17:33:41 to 2025-05-13 22:33:41
+2025-05-16 10:34:21,909 - crypto_data_scraper - INFO - Fetched 134 candles for chunk 36
+2025-05-16 10:34:21,909 - crypto_data_scraper - INFO - Fetching chunk 37/48 for AMP-USDC: 2025-05-13 22:33:41 to 2025-05-14 03:33:41
+2025-05-16 10:34:23,018 - crypto_data_scraper - INFO - Fetched 131 candles for chunk 37
+2025-05-16 10:34:23,018 - crypto_data_scraper - INFO - Fetching chunk 38/48 for AMP-USDC: 2025-05-14 03:33:41 to 2025-05-14 08:33:41
+2025-05-16 10:34:24,229 - crypto_data_scraper - INFO - Fetched 193 candles for chunk 38
+2025-05-16 10:34:24,229 - crypto_data_scraper - INFO - Fetching chunk 39/48 for AMP-USDC: 2025-05-14 08:33:41 to 2025-05-14 13:33:41
+2025-05-16 10:34:25,409 - crypto_data_scraper - INFO - Fetched 275 candles for chunk 39
+2025-05-16 10:34:25,410 - crypto_data_scraper - INFO - Fetching chunk 40/48 for AMP-USDC: 2025-05-14 13:33:41 to 2025-05-14 18:33:41
+2025-05-16 10:34:26,587 - crypto_data_scraper - INFO - Fetched 281 candles for chunk 40
+2025-05-16 10:34:26,588 - crypto_data_scraper - INFO - Fetching chunk 41/48 for AMP-USDC: 2025-05-14 18:33:41 to 2025-05-14 23:33:41
+2025-05-16 10:34:27,771 - crypto_data_scraper - INFO - Fetched 270 candles for chunk 41
+2025-05-16 10:34:27,771 - crypto_data_scraper - INFO - Fetching chunk 42/48 for AMP-USDC: 2025-05-14 23:33:41 to 2025-05-15 04:33:41
+2025-05-16 10:34:28,951 - crypto_data_scraper - INFO - Fetched 295 candles for chunk 42
+2025-05-16 10:34:28,952 - crypto_data_scraper - INFO - Fetching chunk 43/48 for AMP-USDC: 2025-05-15 04:33:41 to 2025-05-15 09:33:41
+2025-05-16 10:34:30,133 - crypto_data_scraper - INFO - Fetched 275 candles for chunk 43
+2025-05-16 10:34:30,133 - crypto_data_scraper - INFO - Fetching chunk 44/48 for AMP-USDC: 2025-05-15 09:33:41 to 2025-05-15 14:33:41
+2025-05-16 10:34:31,319 - crypto_data_scraper - INFO - Fetched 256 candles for chunk 44
+2025-05-16 10:34:31,320 - crypto_data_scraper - INFO - Fetching chunk 45/48 for AMP-USDC: 2025-05-15 14:33:41 to 2025-05-15 19:33:41
+2025-05-16 10:34:32,507 - crypto_data_scraper - INFO - Fetched 209 candles for chunk 45
+2025-05-16 10:34:32,507 - crypto_data_scraper - INFO - Fetching chunk 46/48 for AMP-USDC: 2025-05-15 19:33:41 to 2025-05-16 00:33:41
+2025-05-16 10:34:33,692 - crypto_data_scraper - INFO - Fetched 190 candles for chunk 46
+2025-05-16 10:34:33,693 - crypto_data_scraper - INFO - Fetching chunk 47/48 for AMP-USDC: 2025-05-16 00:33:41 to 2025-05-16 05:33:41
+2025-05-16 10:34:34,874 - crypto_data_scraper - INFO - Fetched 132 candles for chunk 47
+2025-05-16 10:34:34,874 - crypto_data_scraper - INFO - Fetching chunk 48/48 for AMP-USDC: 2025-05-16 05:33:41 to 2025-05-16 10:33:41
+2025-05-16 10:34:36,055 - crypto_data_scraper - INFO - Fetched 177 candles for chunk 48
+2025-05-16 10:34:36,072 - crypto_data_scraper - INFO - Average interval between candles for AMP-USDC: 153.3 seconds
+2025-05-16 10:34:36,073 - crypto_data_scraper - WARNING - WARNING: Expected 1-minute candles but average interval is 153.3 seconds
+2025-05-16 10:34:36,073 - crypto_data_scraper - INFO - Successfully fetched 7550 one-minute candles for AMP-USDC
+2025-05-16 10:34:36,142 - crypto_data_scraper - INFO - Data saved to market_data/AMP_USDC/AMP_USDC_20250506_to_20250516_one_minute.csv
+2025-05-16 10:34:36,205 - crypto_data_scraper - INFO - Master data created for AMP-USDC, total records: 7550
+2025-05-16 10:34:37,706 - crypto_data_scraper - INFO - Processing 2/2: AAVE-USDC
+2025-05-16 10:34:37,707 - crypto_data_scraper - INFO - Fetching historical data for AAVE-USDC
+2025-05-16 10:34:37,707 - crypto_data_scraper - INFO - Need to make 48 API calls to fetch all data for AAVE-USDC
+2025-05-16 10:34:37,708 - crypto_data_scraper - INFO - Fetching chunk 1/48 for AAVE-USDC: 2025-05-06 10:33:41 to 2025-05-06 15:33:41
+2025-05-16 10:34:37,887 - crypto_data_scraper - INFO - Fetched 294 candles for chunk 1
+2025-05-16 10:34:37,887 - crypto_data_scraper - INFO - Fetching chunk 2/48 for AAVE-USDC: 2025-05-06 15:33:41 to 2025-05-06 20:33:41
+2025-05-16 10:34:39,073 - crypto_data_scraper - INFO - Fetched 295 candles for chunk 2
+2025-05-16 10:34:39,073 - crypto_data_scraper - INFO - Fetching chunk 3/48 for AAVE-USDC: 2025-05-06 20:33:41 to 2025-05-07 01:33:41
+2025-05-16 10:34:40,218 - crypto_data_scraper - INFO - Fetched 290 candles for chunk 3
+2025-05-16 10:34:40,219 - crypto_data_scraper - INFO - Fetching chunk 4/48 for AAVE-USDC: 2025-05-07 01:33:41 to 2025-05-07 06:33:41
+2025-05-16 10:34:41,347 - crypto_data_scraper - INFO - Fetched 293 candles for chunk 4
+2025-05-16 10:34:41,348 - crypto_data_scraper - INFO - Fetching chunk 5/48 for AAVE-USDC: 2025-05-07 06:33:41 to 2025-05-07 11:33:41
+2025-05-16 10:34:42,545 - crypto_data_scraper - INFO - Fetched 299 candles for chunk 5
+2025-05-16 10:34:42,546 - crypto_data_scraper - INFO - Fetching chunk 6/48 for AAVE-USDC: 2025-05-07 11:33:41 to 2025-05-07 16:33:41
+2025-05-16 10:34:43,671 - crypto_data_scraper - INFO - Fetched 297 candles for chunk 6
+2025-05-16 10:34:43,671 - crypto_data_scraper - INFO - Fetching chunk 7/48 for AAVE-USDC: 2025-05-07 16:33:41 to 2025-05-07 21:33:41
+2025-05-16 10:34:44,814 - crypto_data_scraper - INFO - Fetched 298 candles for chunk 7
+2025-05-16 10:34:44,814 - crypto_data_scraper - INFO - Fetching chunk 8/48 for AAVE-USDC: 2025-05-07 21:33:41 to 2025-05-08 02:33:41
+2025-05-16 10:34:45,943 - crypto_data_scraper - INFO - Fetched 300 candles for chunk 8
+2025-05-16 10:34:45,943 - crypto_data_scraper - INFO - Fetching chunk 9/48 for AAVE-USDC: 2025-05-08 02:33:41 to 2025-05-08 07:33:41
+2025-05-16 10:34:47,133 - crypto_data_scraper - INFO - Fetched 299 candles for chunk 9
+2025-05-16 10:34:47,134 - crypto_data_scraper - INFO - Fetching chunk 10/48 for AAVE-USDC: 2025-05-08 07:33:41 to 2025-05-08 12:33:41
+2025-05-16 10:34:48,321 - crypto_data_scraper - INFO - Fetched 300 candles for chunk 10
+2025-05-16 10:34:48,322 - crypto_data_scraper - INFO - Fetching chunk 11/48 for AAVE-USDC: 2025-05-08 12:33:41 to 2025-05-08 17:33:41
+2025-05-16 10:34:49,504 - crypto_data_scraper - INFO - Fetched 300 candles for chunk 11
+2025-05-16 10:34:49,504 - crypto_data_scraper - INFO - Fetching chunk 12/48 for AAVE-USDC: 2025-05-08 17:33:41 to 2025-05-08 22:33:41
+2025-05-16 10:34:50,633 - crypto_data_scraper - INFO - Fetched 300 candles for chunk 12
+2025-05-16 10:34:50,633 - crypto_data_scraper - INFO - Fetching chunk 13/48 for AAVE-USDC: 2025-05-08 22:33:41 to 2025-05-09 03:33:41
+2025-05-16 10:34:51,810 - crypto_data_scraper - INFO - Fetched 300 candles for chunk 13
+2025-05-16 10:34:51,811 - crypto_data_scraper - INFO - Fetching chunk 14/48 for AAVE-USDC: 2025-05-09 03:33:41 to 2025-05-09 08:33:41
+2025-05-16 10:34:52,934 - crypto_data_scraper - INFO - Fetched 300 candles for chunk 14
+2025-05-16 10:34:52,934 - crypto_data_scraper - INFO - Fetching chunk 15/48 for AAVE-USDC: 2025-05-09 08:33:41 to 2025-05-09 13:33:41
+2025-05-16 10:34:54,133 - crypto_data_scraper - INFO - Fetched 300 candles for chunk 15
+2025-05-16 10:34:54,134 - crypto_data_scraper - INFO - Fetching chunk 16/48 for AAVE-USDC: 2025-05-09 13:33:41 to 2025-05-09 18:33:41
+2025-05-16 10:34:55,323 - crypto_data_scraper - INFO - Fetched 292 candles for chunk 16
+2025-05-16 10:34:55,323 - crypto_data_scraper - INFO - Fetching chunk 17/48 for AAVE-USDC: 2025-05-09 18:33:41 to 2025-05-09 23:33:41
+2025-05-16 10:34:56,520 - crypto_data_scraper - INFO - Fetched 300 candles for chunk 17
+2025-05-16 10:34:56,521 - crypto_data_scraper - INFO - Fetching chunk 18/48 for AAVE-USDC: 2025-05-09 23:33:41 to 2025-05-10 04:33:41
+2025-05-16 10:34:57,711 - crypto_data_scraper - INFO - Fetched 300 candles for chunk 18
+2025-05-16 10:34:57,711 - crypto_data_scraper - INFO - Fetching chunk 19/48 for AAVE-USDC: 2025-05-10 04:33:41 to 2025-05-10 09:33:41
+2025-05-16 10:34:58,902 - crypto_data_scraper - INFO - Fetched 300 candles for chunk 19
+2025-05-16 10:34:58,902 - crypto_data_scraper - INFO - Fetching chunk 20/48 for AAVE-USDC: 2025-05-10 09:33:41 to 2025-05-10 14:33:41
+2025-05-16 10:35:00,071 - crypto_data_scraper - INFO - Fetched 300 candles for chunk 20
+2025-05-16 10:35:00,071 - crypto_data_scraper - INFO - Fetching chunk 21/48 for AAVE-USDC: 2025-05-10 14:33:41 to 2025-05-10 19:33:41
+2025-05-16 10:35:01,265 - crypto_data_scraper - INFO - Fetched 297 candles for chunk 21
+2025-05-16 10:35:01,265 - crypto_data_scraper - INFO - Fetching chunk 22/48 for AAVE-USDC: 2025-05-10 19:33:41 to 2025-05-11 00:33:41
+2025-05-16 10:35:02,455 - crypto_data_scraper - INFO - Fetched 300 candles for chunk 22
+2025-05-16 10:35:02,455 - crypto_data_scraper - INFO - Fetching chunk 23/48 for AAVE-USDC: 2025-05-11 00:33:41 to 2025-05-11 05:33:41
+2025-05-16 10:35:03,657 - crypto_data_scraper - INFO - Fetched 299 candles for chunk 23
+2025-05-16 10:35:03,658 - crypto_data_scraper - INFO - Fetching chunk 24/48 for AAVE-USDC: 2025-05-11 05:33:41 to 2025-05-11 10:33:41
+2025-05-16 10:35:04,786 - crypto_data_scraper - INFO - Fetched 293 candles for chunk 24
+2025-05-16 10:35:04,786 - crypto_data_scraper - INFO - Fetching chunk 25/48 for AAVE-USDC: 2025-05-11 10:33:41 to 2025-05-11 15:33:41
+2025-05-16 10:35:05,899 - crypto_data_scraper - INFO - Fetched 298 candles for chunk 25
+2025-05-16 10:35:05,900 - crypto_data_scraper - INFO - Fetching chunk 26/48 for AAVE-USDC: 2025-05-11 15:33:41 to 2025-05-11 20:33:41
+2025-05-16 10:35:07,127 - crypto_data_scraper - INFO - Fetched 285 candles for chunk 26
+2025-05-16 10:35:07,128 - crypto_data_scraper - INFO - Fetching chunk 27/48 for AAVE-USDC: 2025-05-11 20:33:41 to 2025-05-12 01:33:41
+2025-05-16 10:35:08,292 - crypto_data_scraper - INFO - Fetched 299 candles for chunk 27
+2025-05-16 10:35:08,293 - crypto_data_scraper - INFO - Fetching chunk 28/48 for AAVE-USDC: 2025-05-12 01:33:41 to 2025-05-12 06:33:41
+2025-05-16 10:35:09,426 - crypto_data_scraper - INFO - Fetched 300 candles for chunk 28
+2025-05-16 10:35:09,427 - crypto_data_scraper - INFO - Fetching chunk 29/48 for AAVE-USDC: 2025-05-12 06:33:41 to 2025-05-12 11:33:41
+2025-05-16 10:35:10,619 - crypto_data_scraper - INFO - Fetched 300 candles for chunk 29
+2025-05-16 10:35:10,619 - crypto_data_scraper - INFO - Fetching chunk 30/48 for AAVE-USDC: 2025-05-12 11:33:41 to 2025-05-12 16:33:41
+2025-05-16 10:35:11,755 - crypto_data_scraper - INFO - Fetched 299 candles for chunk 30
+2025-05-16 10:35:11,755 - crypto_data_scraper - INFO - Fetching chunk 31/48 for AAVE-USDC: 2025-05-12 16:33:41 to 2025-05-12 21:33:41
+2025-05-16 10:35:12,887 - crypto_data_scraper - INFO - Fetched 296 candles for chunk 31
+2025-05-16 10:35:12,888 - crypto_data_scraper - INFO - Fetching chunk 32/48 for AAVE-USDC: 2025-05-12 21:33:41 to 2025-05-13 02:33:41
+2025-05-16 10:35:14,045 - crypto_data_scraper - INFO - Fetched 295 candles for chunk 32
+2025-05-16 10:35:14,045 - crypto_data_scraper - INFO - Fetching chunk 33/48 for AAVE-USDC: 2025-05-13 02:33:41 to 2025-05-13 07:33:41
+2025-05-16 10:35:15,241 - crypto_data_scraper - INFO - Fetched 297 candles for chunk 33
+2025-05-16 10:35:15,241 - crypto_data_scraper - INFO - Fetching chunk 34/48 for AAVE-USDC: 2025-05-13 07:33:41 to 2025-05-13 12:33:41
+2025-05-16 10:35:16,420 - crypto_data_scraper - INFO - Fetched 300 candles for chunk 34
+2025-05-16 10:35:16,420 - crypto_data_scraper - INFO - Fetching chunk 35/48 for AAVE-USDC: 2025-05-13 12:33:41 to 2025-05-13 17:33:41
+2025-05-16 10:35:17,547 - crypto_data_scraper - INFO - Fetched 300 candles for chunk 35
+2025-05-16 10:35:17,548 - crypto_data_scraper - INFO - Fetching chunk 36/48 for AAVE-USDC: 2025-05-13 17:33:41 to 2025-05-13 22:33:41
+2025-05-16 10:35:18,763 - crypto_data_scraper - INFO - Fetched 300 candles for chunk 36
+2025-05-16 10:35:18,764 - crypto_data_scraper - INFO - Fetching chunk 37/48 for AAVE-USDC: 2025-05-13 22:33:41 to 2025-05-14 03:33:41
+2025-05-16 10:35:19,959 - crypto_data_scraper - INFO - Fetched 300 candles for chunk 37
+2025-05-16 10:35:19,960 - crypto_data_scraper - INFO - Fetching chunk 38/48 for AAVE-USDC: 2025-05-14 03:33:41 to 2025-05-14 08:33:41
+2025-05-16 10:35:21,086 - crypto_data_scraper - INFO - Fetched 299 candles for chunk 38
+2025-05-16 10:35:21,087 - crypto_data_scraper - INFO - Fetching chunk 39/48 for AAVE-USDC: 2025-05-14 08:33:41 to 2025-05-14 13:33:41
+2025-05-16 10:35:22,220 - crypto_data_scraper - INFO - Fetched 300 candles for chunk 39
+2025-05-16 10:35:22,221 - crypto_data_scraper - INFO - Fetching chunk 40/48 for AAVE-USDC: 2025-05-14 13:33:41 to 2025-05-14 18:33:41
+2025-05-16 10:35:23,414 - crypto_data_scraper - INFO - Fetched 290 candles for chunk 40
+2025-05-16 10:35:23,414 - crypto_data_scraper - INFO - Fetching chunk 41/48 for AAVE-USDC: 2025-05-14 18:33:41 to 2025-05-14 23:33:41
+2025-05-16 10:35:24,553 - crypto_data_scraper - INFO - Fetched 298 candles for chunk 41
+2025-05-16 10:35:24,554 - crypto_data_scraper - INFO - Fetching chunk 42/48 for AAVE-USDC: 2025-05-14 23:33:41 to 2025-05-15 04:33:41
+2025-05-16 10:35:25,697 - crypto_data_scraper - INFO - Fetched 300 candles for chunk 42
+2025-05-16 10:35:25,698 - crypto_data_scraper - INFO - Fetching chunk 43/48 for AAVE-USDC: 2025-05-15 04:33:41 to 2025-05-15 09:33:41
+2025-05-16 10:35:26,884 - crypto_data_scraper - INFO - Fetched 300 candles for chunk 43
+2025-05-16 10:35:26,884 - crypto_data_scraper - INFO - Fetching chunk 44/48 for AAVE-USDC: 2025-05-15 09:33:41 to 2025-05-15 14:33:41
+2025-05-16 10:35:28,078 - crypto_data_scraper - INFO - Fetched 300 candles for chunk 44
+2025-05-16 10:35:28,079 - crypto_data_scraper - INFO - Fetching chunk 45/48 for AAVE-USDC: 2025-05-15 14:33:41 to 2025-05-15 19:33:41
+2025-05-16 10:35:29,213 - crypto_data_scraper - INFO - Fetched 297 candles for chunk 45
+2025-05-16 10:35:29,213 - crypto_data_scraper - INFO - Fetching chunk 46/48 for AAVE-USDC: 2025-05-15 19:33:41 to 2025-05-16 00:33:41
+2025-05-16 10:35:30,409 - crypto_data_scraper - INFO - Fetched 300 candles for chunk 46
+2025-05-16 10:35:30,410 - crypto_data_scraper - INFO - Fetching chunk 47/48 for AAVE-USDC: 2025-05-16 00:33:41 to 2025-05-16 05:33:41
+2025-05-16 10:35:31,608 - crypto_data_scraper - INFO - Fetched 300 candles for chunk 47
+2025-05-16 10:35:31,608 - crypto_data_scraper - INFO - Fetching chunk 48/48 for AAVE-USDC: 2025-05-16 05:33:41 to 2025-05-16 10:33:41
+2025-05-16 10:35:32,741 - crypto_data_scraper - INFO - Fetched 300 candles for chunk 48
+2025-05-16 10:35:32,767 - crypto_data_scraper - INFO - Average interval between candles for AAVE-USDC: 60.0 seconds
+2025-05-16 10:35:32,767 - crypto_data_scraper - INFO - Successfully fetched 14299 one-minute candles for AAVE-USDC
+2025-05-16 10:35:32,886 - crypto_data_scraper - INFO - Data saved to market_data/AAVE_USDC/AAVE_USDC_20250506_to_20250516_one_minute.csv
+2025-05-16 10:35:32,995 - crypto_data_scraper - INFO - Master data created for AAVE-USDC, total records: 14299
+2025-05-16 10:35:34,497 - crypto_data_scraper - INFO - Found 2 cryptocurrency directories
+2025-05-16 10:35:34,531 - crypto_data_scraper - INFO - Added 14299 records for AAVE-USDC
+2025-05-16 10:35:34,557 - crypto_data_scraper - INFO - Added 7550 records for AMP-USDC
+2025-05-16 10:35:34,751 - crypto_data_scraper - INFO - Combined master file created at market_data/all_crypto_master.csv
+2025-05-16 10:35:34,751 - crypto_data_scraper - INFO - Total records: 21849, Symbols: 2
+2025-05-16 10:35:34,753 - crypto_data_scraper - INFO - Data scraping completed. Saved 3 files.

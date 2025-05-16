@@ -30,7 +30,12 @@ class APIBase(object):
         timeout: Optional[int] = None,
         verbose: Optional[bool] = False,
     ):
-        if (api_key is not None or api_secret is not None) and key_file is not None:
+        # Only raise if BOTH api_key/api_secret are explicitly provided (not just env defaults) AND key_file is provided
+        env_api_key = os.getenv(API_ENV_KEY)
+        env_api_secret = os.getenv(API_SECRET_ENV_KEY)
+        explicit_api_key = api_key is not None and api_key != env_api_key
+        explicit_api_secret = api_secret is not None and api_secret != env_api_secret
+        if (explicit_api_key or explicit_api_secret) and key_file is not None:
             raise Exception(f"Cannot specify both api_key and key_file in constructor")
 
         if key_file is not None:
