@@ -11,14 +11,15 @@
   - Only the 'price with buy/sell trades' plot is used for visualization (all others removed)
 
 ## Phase 2: Basic Strategy and Visualization
-- [ ] 2. Implement buy/sell logic
-- [ ] 1. Add transaction fee calculation
+- [x] 2. Implement buy/sell logic
+- [x] 1. Add transaction fee calculation
     - Fee structure (Coinbase Advanced):
         - $0-$1K monthly: Maker 0.60%, Taker 1.20%
         - $1K-$500K monthly: Maker 0.35%, Taker 0.75%
-    - Code will use these values for fee calculations.
-- [ ] 3. Basic price chart with transaction markers
-- [ ] 4. Portfolio value tracking
+    - Code uses these values for fee calculations.
+- [x] 3. Basic price chart with transaction markers
+- [x] 4. Portfolio value tracking
+    - Trade output now includes: USD value, qty, fee, crypto balance, USDC balance, and portfolio value columns for each trade.
 - [ ] 5. Checkpoint: Strategy executes with one crypto
 
 ## Phase 3: Enhanced Analysis and Visualization
