@@ -214,3 +214,614 @@
 2025-05-16 10:35:34,751 - crypto_data_scraper - INFO - Combined master file created at market_data/all_crypto_master.csv
 2025-05-16 10:35:34,751 - crypto_data_scraper - INFO - Total records: 21849, Symbols: 2
 2025-05-16 10:35:34,753 - crypto_data_scraper - INFO - Data scraping completed. Saved 3 files.
+2025-05-16 14:35:45,476 - crypto_data_scraper - INFO - CryptoDataScraper initialized to collect 30 days of ONE_MINUTE candles
+2025-05-16 14:35:45,476 - crypto_data_scraper - INFO - Time range: 2025-04-16 14:35:45 to 2025-05-16 14:35:45
+2025-05-16 14:35:45,477 - crypto_data_scraper - INFO - Will scrape data for 1 specified symbols
+2025-05-16 14:35:45,477 - crypto_data_scraper - INFO - Processing 1/1: AMP-USDC
+2025-05-16 14:35:45,477 - crypto_data_scraper - INFO - Fetching historical data for AMP-USDC
+2025-05-16 14:35:45,477 - crypto_data_scraper - INFO - Need to make 144 API calls to fetch all data for AMP-USDC
+2025-05-16 14:35:45,478 - crypto_data_scraper - INFO - Fetching chunk 1/144 for AMP-USDC: 2025-04-16 14:35:45 to 2025-04-16 19:35:45
+2025-05-16 14:35:45,658 - crypto_data_scraper - INFO - Fetched 71 candles for chunk 1
+2025-05-16 14:35:45,658 - crypto_data_scraper - INFO - Fetching chunk 2/144 for AMP-USDC: 2025-04-16 19:35:45 to 2025-04-17 00:35:45
+2025-05-16 14:35:46,834 - crypto_data_scraper - INFO - Fetched 44 candles for chunk 2
+2025-05-16 14:35:46,834 - crypto_data_scraper - INFO - Fetching chunk 3/144 for AMP-USDC: 2025-04-17 00:35:45 to 2025-04-17 05:35:45
+2025-05-16 14:35:47,941 - crypto_data_scraper - INFO - Fetched 61 candles for chunk 3
+2025-05-16 14:35:47,941 - crypto_data_scraper - INFO - Fetching chunk 4/144 for AMP-USDC: 2025-04-17 05:35:45 to 2025-04-17 10:35:45
+2025-05-16 14:35:49,108 - crypto_data_scraper - INFO - Fetched 73 candles for chunk 4
+2025-05-16 14:35:49,109 - crypto_data_scraper - INFO - Fetching chunk 5/144 for AMP-USDC: 2025-04-17 10:35:45 to 2025-04-17 15:35:45
+2025-05-16 14:35:50,305 - crypto_data_scraper - INFO - Fetched 77 candles for chunk 5
+2025-05-16 14:35:50,306 - crypto_data_scraper - INFO - Fetching chunk 6/144 for AMP-USDC: 2025-04-17 15:35:45 to 2025-04-17 20:35:45
+2025-05-16 14:35:51,406 - crypto_data_scraper - INFO - Fetched 38 candles for chunk 6
+2025-05-16 14:35:51,406 - crypto_data_scraper - INFO - Fetching chunk 7/144 for AMP-USDC: 2025-04-17 20:35:45 to 2025-04-18 01:35:45
+2025-05-16 14:35:52,570 - crypto_data_scraper - INFO - Fetched 48 candles for chunk 7
+2025-05-16 14:35:52,571 - crypto_data_scraper - INFO - Fetching chunk 8/144 for AMP-USDC: 2025-04-18 01:35:45 to 2025-04-18 06:35:45
+2025-05-16 14:35:53,734 - crypto_data_scraper - INFO - Fetched 40 candles for chunk 8
+2025-05-16 14:35:53,735 - crypto_data_scraper - INFO - Fetching chunk 9/144 for AMP-USDC: 2025-04-18 06:35:45 to 2025-04-18 11:35:45
+2025-05-16 14:35:54,899 - crypto_data_scraper - INFO - Fetched 59 candles for chunk 9
+2025-05-16 14:35:54,899 - crypto_data_scraper - INFO - Fetching chunk 10/144 for AMP-USDC: 2025-04-18 11:35:45 to 2025-04-18 16:35:45
+2025-05-16 14:35:56,090 - crypto_data_scraper - INFO - Fetched 77 candles for chunk 10
+2025-05-16 14:35:56,090 - crypto_data_scraper - INFO - Fetching chunk 11/144 for AMP-USDC: 2025-04-18 16:35:45 to 2025-04-18 21:35:45
+2025-05-16 14:35:57,256 - crypto_data_scraper - INFO - Fetched 62 candles for chunk 11
+2025-05-16 14:35:57,256 - crypto_data_scraper - INFO - Fetching chunk 12/144 for AMP-USDC: 2025-04-18 21:35:45 to 2025-04-19 02:35:45
+2025-05-16 14:35:58,421 - crypto_data_scraper - INFO - Fetched 36 candles for chunk 12
+2025-05-16 14:35:58,422 - crypto_data_scraper - INFO - Fetching chunk 13/144 for AMP-USDC: 2025-04-19 02:35:45 to 2025-04-19 07:35:45
+2025-05-16 14:35:59,536 - crypto_data_scraper - INFO - Fetched 50 candles for chunk 13
+2025-05-16 14:35:59,537 - crypto_data_scraper - INFO - Fetching chunk 14/144 for AMP-USDC: 2025-04-19 07:35:45 to 2025-04-19 12:35:45
+2025-05-16 14:36:00,698 - crypto_data_scraper - INFO - Fetched 45 candles for chunk 14
+2025-05-16 14:36:00,698 - crypto_data_scraper - INFO - Fetching chunk 15/144 for AMP-USDC: 2025-04-19 12:35:45 to 2025-04-19 17:35:45
+2025-05-16 14:36:01,874 - crypto_data_scraper - INFO - Fetched 76 candles for chunk 15
+2025-05-16 14:36:01,874 - crypto_data_scraper - INFO - Fetching chunk 16/144 for AMP-USDC: 2025-04-19 17:35:45 to 2025-04-19 22:35:45
+2025-05-16 14:36:02,999 - crypto_data_scraper - INFO - Fetched 59 candles for chunk 16
+2025-05-16 14:36:03,000 - crypto_data_scraper - INFO - Fetching chunk 17/144 for AMP-USDC: 2025-04-19 22:35:45 to 2025-04-20 03:35:45
+2025-05-16 14:36:04,162 - crypto_data_scraper - INFO - Fetched 56 candles for chunk 17
+2025-05-16 14:36:04,162 - crypto_data_scraper - INFO - Fetching chunk 18/144 for AMP-USDC: 2025-04-20 03:35:45 to 2025-04-20 08:35:45
+2025-05-16 14:36:05,278 - crypto_data_scraper - INFO - Fetched 110 candles for chunk 18
+2025-05-16 14:36:05,278 - crypto_data_scraper - INFO - Fetching chunk 19/144 for AMP-USDC: 2025-04-20 08:35:45 to 2025-04-20 13:35:45
+2025-05-16 14:36:06,397 - crypto_data_scraper - INFO - Fetched 98 candles for chunk 19
+2025-05-16 14:36:06,397 - crypto_data_scraper - INFO - Fetching chunk 20/144 for AMP-USDC: 2025-04-20 13:35:45 to 2025-04-20 18:35:45
+2025-05-16 14:36:07,587 - crypto_data_scraper - INFO - Fetched 96 candles for chunk 20
+2025-05-16 14:36:07,587 - crypto_data_scraper - INFO - Fetching chunk 21/144 for AMP-USDC: 2025-04-20 18:35:45 to 2025-04-20 23:35:45
+2025-05-16 14:36:08,751 - crypto_data_scraper - INFO - Fetched 112 candles for chunk 21
+2025-05-16 14:36:08,752 - crypto_data_scraper - INFO - Fetching chunk 22/144 for AMP-USDC: 2025-04-20 23:35:45 to 2025-04-21 04:35:45
+2025-05-16 14:36:09,866 - crypto_data_scraper - INFO - Fetched 104 candles for chunk 22
+2025-05-16 14:36:09,867 - crypto_data_scraper - INFO - Fetching chunk 23/144 for AMP-USDC: 2025-04-21 04:35:45 to 2025-04-21 09:35:45
+2025-05-16 14:36:11,032 - crypto_data_scraper - INFO - Fetched 103 candles for chunk 23
+2025-05-16 14:36:11,032 - crypto_data_scraper - INFO - Fetching chunk 24/144 for AMP-USDC: 2025-04-21 09:35:45 to 2025-04-21 14:35:45
+2025-05-16 14:36:12,144 - crypto_data_scraper - INFO - Fetched 135 candles for chunk 24
+2025-05-16 14:36:12,144 - crypto_data_scraper - INFO - Fetching chunk 25/144 for AMP-USDC: 2025-04-21 14:35:45 to 2025-04-21 19:35:45
+2025-05-16 14:36:13,333 - crypto_data_scraper - INFO - Fetched 210 candles for chunk 25
+2025-05-16 14:36:13,334 - crypto_data_scraper - INFO - Fetching chunk 26/144 for AMP-USDC: 2025-04-21 19:35:45 to 2025-04-22 00:35:45
+2025-05-16 14:36:14,534 - crypto_data_scraper - INFO - Fetched 285 candles for chunk 26
+2025-05-16 14:36:14,535 - crypto_data_scraper - INFO - Fetching chunk 27/144 for AMP-USDC: 2025-04-22 00:35:45 to 2025-04-22 05:35:45
+2025-05-16 14:36:15,740 - crypto_data_scraper - INFO - Fetched 248 candles for chunk 27
+2025-05-16 14:36:15,740 - crypto_data_scraper - INFO - Fetching chunk 28/144 for AMP-USDC: 2025-04-22 05:35:45 to 2025-04-22 10:35:45
+2025-05-16 14:36:16,934 - crypto_data_scraper - INFO - Fetched 252 candles for chunk 28
+2025-05-16 14:36:16,935 - crypto_data_scraper - INFO - Fetching chunk 29/144 for AMP-USDC: 2025-04-22 10:35:45 to 2025-04-22 15:35:45
+2025-05-16 14:36:18,117 - crypto_data_scraper - INFO - Fetched 218 candles for chunk 29
+2025-05-16 14:36:18,118 - crypto_data_scraper - INFO - Fetching chunk 30/144 for AMP-USDC: 2025-04-22 15:35:45 to 2025-04-22 20:35:45
+2025-05-16 14:36:19,248 - crypto_data_scraper - INFO - Fetched 227 candles for chunk 30
+2025-05-16 14:36:19,250 - crypto_data_scraper - INFO - Fetching chunk 31/144 for AMP-USDC: 2025-04-22 20:35:45 to 2025-04-23 01:35:45
+2025-05-16 14:36:20,371 - crypto_data_scraper - INFO - Fetched 187 candles for chunk 31
+2025-05-16 14:36:20,371 - crypto_data_scraper - INFO - Fetching chunk 32/144 for AMP-USDC: 2025-04-23 01:35:45 to 2025-04-23 06:35:45
+2025-05-16 14:36:21,484 - crypto_data_scraper - INFO - Fetched 158 candles for chunk 32
+2025-05-16 14:36:21,484 - crypto_data_scraper - INFO - Fetching chunk 33/144 for AMP-USDC: 2025-04-23 06:35:45 to 2025-04-23 11:35:45
+2025-05-16 14:36:22,598 - crypto_data_scraper - INFO - Fetched 185 candles for chunk 33
+2025-05-16 14:36:22,599 - crypto_data_scraper - INFO - Fetching chunk 34/144 for AMP-USDC: 2025-04-23 11:35:45 to 2025-04-23 16:35:45
+2025-05-16 14:36:23,774 - crypto_data_scraper - INFO - Fetched 160 candles for chunk 34
+2025-05-16 14:36:23,775 - crypto_data_scraper - INFO - Fetching chunk 35/144 for AMP-USDC: 2025-04-23 16:35:45 to 2025-04-23 21:35:45
+2025-05-16 14:36:25,011 - crypto_data_scraper - INFO - Fetched 144 candles for chunk 35
+2025-05-16 14:36:25,011 - crypto_data_scraper - INFO - Fetching chunk 36/144 for AMP-USDC: 2025-04-23 21:35:45 to 2025-04-24 02:35:45
+2025-05-16 14:36:26,181 - crypto_data_scraper - INFO - Fetched 123 candles for chunk 36
+2025-05-16 14:36:26,182 - crypto_data_scraper - INFO - Fetching chunk 37/144 for AMP-USDC: 2025-04-24 02:35:45 to 2025-04-24 07:35:45
+2025-05-16 14:36:27,307 - crypto_data_scraper - INFO - Fetched 105 candles for chunk 37
+2025-05-16 14:36:27,308 - crypto_data_scraper - INFO - Fetching chunk 38/144 for AMP-USDC: 2025-04-24 07:35:45 to 2025-04-24 12:35:45
+2025-05-16 14:36:28,472 - crypto_data_scraper - INFO - Fetched 146 candles for chunk 38
+2025-05-16 14:36:28,472 - crypto_data_scraper - INFO - Fetching chunk 39/144 for AMP-USDC: 2025-04-24 12:35:45 to 2025-04-24 17:35:45
+2025-05-16 14:36:29,636 - crypto_data_scraper - INFO - Fetched 138 candles for chunk 39
+2025-05-16 14:36:29,636 - crypto_data_scraper - INFO - Fetching chunk 40/144 for AMP-USDC: 2025-04-24 17:35:45 to 2025-04-24 22:35:45
+2025-05-16 14:36:30,840 - crypto_data_scraper - INFO - Fetched 135 candles for chunk 40
+2025-05-16 14:36:30,841 - crypto_data_scraper - INFO - Fetching chunk 41/144 for AMP-USDC: 2025-04-24 22:35:45 to 2025-04-25 03:35:45
+2025-05-16 14:36:31,954 - crypto_data_scraper - INFO - Fetched 85 candles for chunk 41
+2025-05-16 14:36:31,954 - crypto_data_scraper - INFO - Fetching chunk 42/144 for AMP-USDC: 2025-04-25 03:35:45 to 2025-04-25 08:35:45
+2025-05-16 14:36:33,068 - crypto_data_scraper - INFO - Fetched 123 candles for chunk 42
+2025-05-16 14:36:33,069 - crypto_data_scraper - INFO - Fetching chunk 43/144 for AMP-USDC: 2025-04-25 08:35:45 to 2025-04-25 13:35:45
+2025-05-16 14:36:34,191 - crypto_data_scraper - INFO - Fetched 127 candles for chunk 43
+2025-05-16 14:36:34,191 - crypto_data_scraper - INFO - Fetching chunk 44/144 for AMP-USDC: 2025-04-25 13:35:45 to 2025-04-25 18:35:45
+2025-05-16 14:36:35,363 - crypto_data_scraper - INFO - Fetched 93 candles for chunk 44
+2025-05-16 14:36:35,363 - crypto_data_scraper - INFO - Fetching chunk 45/144 for AMP-USDC: 2025-04-25 18:35:45 to 2025-04-25 23:35:45
+2025-05-16 14:36:36,483 - crypto_data_scraper - INFO - Fetched 113 candles for chunk 45
+2025-05-16 14:36:36,483 - crypto_data_scraper - INFO - Fetching chunk 46/144 for AMP-USDC: 2025-04-25 23:35:45 to 2025-04-26 04:35:45
+2025-05-16 14:36:37,597 - crypto_data_scraper - INFO - Fetched 92 candles for chunk 46
+2025-05-16 14:36:37,597 - crypto_data_scraper - INFO - Fetching chunk 47/144 for AMP-USDC: 2025-04-26 04:35:45 to 2025-04-26 09:35:45
+2025-05-16 14:36:38,708 - crypto_data_scraper - INFO - Fetched 79 candles for chunk 47
+2025-05-16 14:36:38,709 - crypto_data_scraper - INFO - Fetching chunk 48/144 for AMP-USDC: 2025-04-26 09:35:45 to 2025-04-26 14:35:45
+2025-05-16 14:36:39,885 - crypto_data_scraper - INFO - Fetched 88 candles for chunk 48
+2025-05-16 14:36:39,886 - crypto_data_scraper - INFO - Fetching chunk 49/144 for AMP-USDC: 2025-04-26 14:35:45 to 2025-04-26 19:35:45
+2025-05-16 14:36:41,008 - crypto_data_scraper - INFO - Fetched 91 candles for chunk 49
+2025-05-16 14:36:41,009 - crypto_data_scraper - INFO - Fetching chunk 50/144 for AMP-USDC: 2025-04-26 19:35:45 to 2025-04-27 00:35:45
+2025-05-16 14:36:42,181 - crypto_data_scraper - INFO - Fetched 85 candles for chunk 50
+2025-05-16 14:36:42,181 - crypto_data_scraper - INFO - Fetching chunk 51/144 for AMP-USDC: 2025-04-27 00:35:45 to 2025-04-27 05:35:45
+2025-05-16 14:36:43,313 - crypto_data_scraper - INFO - Fetched 46 candles for chunk 51
+2025-05-16 14:36:43,313 - crypto_data_scraper - INFO - Fetching chunk 52/144 for AMP-USDC: 2025-04-27 05:35:45 to 2025-04-27 10:35:45
+2025-05-16 14:36:44,421 - crypto_data_scraper - INFO - Fetched 68 candles for chunk 52
+2025-05-16 14:36:44,421 - crypto_data_scraper - INFO - Fetching chunk 53/144 for AMP-USDC: 2025-04-27 10:35:45 to 2025-04-27 15:35:45
+2025-05-16 14:36:45,554 - crypto_data_scraper - INFO - Fetched 104 candles for chunk 53
+2025-05-16 14:36:45,554 - crypto_data_scraper - INFO - Fetching chunk 54/144 for AMP-USDC: 2025-04-27 15:35:45 to 2025-04-27 20:35:45
+2025-05-16 14:36:46,720 - crypto_data_scraper - INFO - Fetched 101 candles for chunk 54
+2025-05-16 14:36:46,720 - crypto_data_scraper - INFO - Fetching chunk 55/144 for AMP-USDC: 2025-04-27 20:35:45 to 2025-04-28 01:35:45
+2025-05-16 14:36:47,840 - crypto_data_scraper - INFO - Fetched 117 candles for chunk 55
+2025-05-16 14:36:47,840 - crypto_data_scraper - INFO - Fetching chunk 56/144 for AMP-USDC: 2025-04-28 01:35:45 to 2025-04-28 06:35:45
+2025-05-16 14:36:49,024 - crypto_data_scraper - INFO - Fetched 45 candles for chunk 56
+2025-05-16 14:36:49,024 - crypto_data_scraper - INFO - Fetching chunk 57/144 for AMP-USDC: 2025-04-28 06:35:45 to 2025-04-28 11:35:45
+2025-05-16 14:36:50,129 - crypto_data_scraper - INFO - Fetched 79 candles for chunk 57
+2025-05-16 14:36:50,129 - crypto_data_scraper - INFO - Fetching chunk 58/144 for AMP-USDC: 2025-04-28 11:35:45 to 2025-04-28 16:35:45
+2025-05-16 14:36:51,244 - crypto_data_scraper - INFO - Fetched 121 candles for chunk 58
+2025-05-16 14:36:51,244 - crypto_data_scraper - INFO - Fetching chunk 59/144 for AMP-USDC: 2025-04-28 16:35:45 to 2025-04-28 21:35:45
+2025-05-16 14:36:52,409 - crypto_data_scraper - INFO - Fetched 112 candles for chunk 59
+2025-05-16 14:36:52,410 - crypto_data_scraper - INFO - Fetching chunk 60/144 for AMP-USDC: 2025-04-28 21:35:45 to 2025-04-29 02:35:45
+2025-05-16 14:36:53,522 - crypto_data_scraper - INFO - Fetched 67 candles for chunk 60
+2025-05-16 14:36:53,522 - crypto_data_scraper - INFO - Fetching chunk 61/144 for AMP-USDC: 2025-04-29 02:35:45 to 2025-04-29 07:35:45
+2025-05-16 14:36:54,688 - crypto_data_scraper - INFO - Fetched 63 candles for chunk 61
+2025-05-16 14:36:54,688 - crypto_data_scraper - INFO - Fetching chunk 62/144 for AMP-USDC: 2025-04-29 07:35:45 to 2025-04-29 12:35:45
+2025-05-16 14:36:55,867 - crypto_data_scraper - INFO - Fetched 132 candles for chunk 62
+2025-05-16 14:36:55,867 - crypto_data_scraper - INFO - Fetching chunk 63/144 for AMP-USDC: 2025-04-29 12:35:45 to 2025-04-29 17:35:45
+2025-05-16 14:36:57,042 - crypto_data_scraper - INFO - Fetched 96 candles for chunk 63
+2025-05-16 14:36:57,042 - crypto_data_scraper - INFO - Fetching chunk 64/144 for AMP-USDC: 2025-04-29 17:35:45 to 2025-04-29 22:35:45
+2025-05-16 14:36:58,215 - crypto_data_scraper - INFO - Fetched 97 candles for chunk 64
+2025-05-16 14:36:58,215 - crypto_data_scraper - INFO - Fetching chunk 65/144 for AMP-USDC: 2025-04-29 22:35:45 to 2025-04-30 03:35:45
+2025-05-16 14:36:59,358 - crypto_data_scraper - INFO - Fetched 68 candles for chunk 65
+2025-05-16 14:36:59,359 - crypto_data_scraper - INFO - Fetching chunk 66/144 for AMP-USDC: 2025-04-30 03:35:45 to 2025-04-30 08:35:45
+2025-05-16 14:37:00,533 - crypto_data_scraper - INFO - Fetched 93 candles for chunk 66
+2025-05-16 14:37:00,534 - crypto_data_scraper - INFO - Fetching chunk 67/144 for AMP-USDC: 2025-04-30 08:35:45 to 2025-04-30 13:35:45
+2025-05-16 14:37:01,722 - crypto_data_scraper - INFO - Fetched 102 candles for chunk 67
+2025-05-16 14:37:01,723 - crypto_data_scraper - INFO - Fetching chunk 68/144 for AMP-USDC: 2025-04-30 13:35:45 to 2025-04-30 18:35:45
+2025-05-16 14:37:02,835 - crypto_data_scraper - INFO - Fetched 83 candles for chunk 68
+2025-05-16 14:37:02,836 - crypto_data_scraper - INFO - Fetching chunk 69/144 for AMP-USDC: 2025-04-30 18:35:45 to 2025-04-30 23:35:45
+2025-05-16 14:37:03,949 - crypto_data_scraper - INFO - Fetched 49 candles for chunk 69
+2025-05-16 14:37:03,950 - crypto_data_scraper - INFO - Fetching chunk 70/144 for AMP-USDC: 2025-04-30 23:35:45 to 2025-05-01 04:35:45
+2025-05-16 14:37:05,050 - crypto_data_scraper - INFO - Fetched 45 candles for chunk 70
+2025-05-16 14:37:05,050 - crypto_data_scraper - INFO - Fetching chunk 71/144 for AMP-USDC: 2025-05-01 04:35:45 to 2025-05-01 09:35:45
+2025-05-16 14:37:06,164 - crypto_data_scraper - INFO - Fetched 81 candles for chunk 71
+2025-05-16 14:37:06,165 - crypto_data_scraper - INFO - Fetching chunk 72/144 for AMP-USDC: 2025-05-01 09:35:45 to 2025-05-01 14:35:45
+2025-05-16 14:37:07,267 - crypto_data_scraper - INFO - Fetched 83 candles for chunk 72
+2025-05-16 14:37:07,268 - crypto_data_scraper - INFO - Fetching chunk 73/144 for AMP-USDC: 2025-05-01 14:35:45 to 2025-05-01 19:35:45
+2025-05-16 14:37:08,381 - crypto_data_scraper - INFO - Fetched 81 candles for chunk 73
+2025-05-16 14:37:08,381 - crypto_data_scraper - INFO - Fetching chunk 74/144 for AMP-USDC: 2025-05-01 19:35:45 to 2025-05-02 00:35:45
+2025-05-16 14:37:09,491 - crypto_data_scraper - INFO - Fetched 56 candles for chunk 74
+2025-05-16 14:37:09,491 - crypto_data_scraper - INFO - Fetching chunk 75/144 for AMP-USDC: 2025-05-02 00:35:45 to 2025-05-02 05:35:45
+2025-05-16 14:37:10,648 - crypto_data_scraper - INFO - Fetched 44 candles for chunk 75
+2025-05-16 14:37:10,648 - crypto_data_scraper - INFO - Fetching chunk 76/144 for AMP-USDC: 2025-05-02 05:35:45 to 2025-05-02 10:35:45
+2025-05-16 14:37:11,765 - crypto_data_scraper - INFO - Fetched 70 candles for chunk 76
+2025-05-16 14:37:11,765 - crypto_data_scraper - INFO - Fetching chunk 77/144 for AMP-USDC: 2025-05-02 10:35:45 to 2025-05-02 15:35:45
+2025-05-16 14:37:12,941 - crypto_data_scraper - INFO - Fetched 80 candles for chunk 77
+2025-05-16 14:37:12,941 - crypto_data_scraper - INFO - Fetching chunk 78/144 for AMP-USDC: 2025-05-02 15:35:45 to 2025-05-02 20:35:45
+2025-05-16 14:37:14,048 - crypto_data_scraper - INFO - Fetched 72 candles for chunk 78
+2025-05-16 14:37:14,052 - crypto_data_scraper - INFO - Fetching chunk 79/144 for AMP-USDC: 2025-05-02 20:35:45 to 2025-05-03 01:35:45
+2025-05-16 14:37:15,222 - crypto_data_scraper - INFO - Fetched 36 candles for chunk 79
+2025-05-16 14:37:15,222 - crypto_data_scraper - INFO - Fetching chunk 80/144 for AMP-USDC: 2025-05-03 01:35:45 to 2025-05-03 06:35:45
+2025-05-16 14:37:16,327 - crypto_data_scraper - INFO - Fetched 43 candles for chunk 80
+2025-05-16 14:37:16,327 - crypto_data_scraper - INFO - Fetching chunk 81/144 for AMP-USDC: 2025-05-03 06:35:45 to 2025-05-03 11:35:45
+2025-05-16 14:37:17,440 - crypto_data_scraper - INFO - Fetched 66 candles for chunk 81
+2025-05-16 14:37:17,440 - crypto_data_scraper - INFO - Fetching chunk 82/144 for AMP-USDC: 2025-05-03 11:35:45 to 2025-05-03 16:35:45
+2025-05-16 14:37:18,568 - crypto_data_scraper - INFO - Fetched 143 candles for chunk 82
+2025-05-16 14:37:18,568 - crypto_data_scraper - INFO - Fetching chunk 83/144 for AMP-USDC: 2025-05-03 16:35:45 to 2025-05-03 21:35:45
+2025-05-16 14:37:19,735 - crypto_data_scraper - INFO - Fetched 65 candles for chunk 83
+2025-05-16 14:37:19,735 - crypto_data_scraper - INFO - Fetching chunk 84/144 for AMP-USDC: 2025-05-03 21:35:45 to 2025-05-04 02:35:45
+2025-05-16 14:37:20,913 - crypto_data_scraper - INFO - Fetched 63 candles for chunk 84
+2025-05-16 14:37:20,913 - crypto_data_scraper - INFO - Fetching chunk 85/144 for AMP-USDC: 2025-05-04 02:35:45 to 2025-05-04 07:35:45
+2025-05-16 14:37:22,052 - crypto_data_scraper - INFO - Fetched 41 candles for chunk 85
+2025-05-16 14:37:22,053 - crypto_data_scraper - INFO - Fetching chunk 86/144 for AMP-USDC: 2025-05-04 07:35:45 to 2025-05-04 12:35:45
+2025-05-16 14:37:23,219 - crypto_data_scraper - INFO - Fetched 66 candles for chunk 86
+2025-05-16 14:37:23,220 - crypto_data_scraper - INFO - Fetching chunk 87/144 for AMP-USDC: 2025-05-04 12:35:45 to 2025-05-04 17:35:45
+2025-05-16 14:37:24,354 - crypto_data_scraper - INFO - Fetched 71 candles for chunk 87
+2025-05-16 14:37:24,354 - crypto_data_scraper - INFO - Fetching chunk 88/144 for AMP-USDC: 2025-05-04 17:35:45 to 2025-05-04 22:35:45
+2025-05-16 14:37:25,463 - crypto_data_scraper - INFO - Fetched 85 candles for chunk 88
+2025-05-16 14:37:25,464 - crypto_data_scraper - INFO - Fetching chunk 89/144 for AMP-USDC: 2025-05-04 22:35:45 to 2025-05-05 03:35:45
+2025-05-16 14:37:26,621 - crypto_data_scraper - INFO - Fetched 41 candles for chunk 89
+2025-05-16 14:37:26,621 - crypto_data_scraper - INFO - Fetching chunk 90/144 for AMP-USDC: 2025-05-05 03:35:45 to 2025-05-05 08:35:45
+2025-05-16 14:37:27,788 - crypto_data_scraper - INFO - Fetched 90 candles for chunk 90
+2025-05-16 14:37:27,789 - crypto_data_scraper - INFO - Fetching chunk 91/144 for AMP-USDC: 2025-05-05 08:35:45 to 2025-05-05 13:35:45
+2025-05-16 14:37:28,987 - crypto_data_scraper - INFO - Fetched 110 candles for chunk 91
+2025-05-16 14:37:28,987 - crypto_data_scraper - INFO - Fetching chunk 92/144 for AMP-USDC: 2025-05-05 13:35:45 to 2025-05-05 18:35:45
+2025-05-16 14:37:30,097 - crypto_data_scraper - INFO - Fetched 124 candles for chunk 92
+2025-05-16 14:37:30,098 - crypto_data_scraper - INFO - Fetching chunk 93/144 for AMP-USDC: 2025-05-05 18:35:45 to 2025-05-05 23:35:45
+2025-05-16 14:37:31,211 - crypto_data_scraper - INFO - Fetched 86 candles for chunk 93
+2025-05-16 14:37:31,212 - crypto_data_scraper - INFO - Fetching chunk 94/144 for AMP-USDC: 2025-05-05 23:35:45 to 2025-05-06 04:35:45
+2025-05-16 14:37:32,329 - crypto_data_scraper - INFO - Fetched 101 candles for chunk 94
+2025-05-16 14:37:32,329 - crypto_data_scraper - INFO - Fetching chunk 95/144 for AMP-USDC: 2025-05-06 04:35:45 to 2025-05-06 09:35:45
+2025-05-16 14:37:33,512 - crypto_data_scraper - INFO - Fetched 115 candles for chunk 95
+2025-05-16 14:37:33,512 - crypto_data_scraper - INFO - Fetching chunk 96/144 for AMP-USDC: 2025-05-06 09:35:45 to 2025-05-06 14:35:45
+2025-05-16 14:37:34,637 - crypto_data_scraper - INFO - Fetched 114 candles for chunk 96
+2025-05-16 14:37:34,638 - crypto_data_scraper - INFO - Fetching chunk 97/144 for AMP-USDC: 2025-05-06 14:35:45 to 2025-05-06 19:35:45
+2025-05-16 14:37:35,771 - crypto_data_scraper - INFO - Fetched 125 candles for chunk 97
+2025-05-16 14:37:35,772 - crypto_data_scraper - INFO - Fetching chunk 98/144 for AMP-USDC: 2025-05-06 19:35:45 to 2025-05-07 00:35:45
+2025-05-16 14:37:36,901 - crypto_data_scraper - INFO - Fetched 99 candles for chunk 98
+2025-05-16 14:37:36,901 - crypto_data_scraper - INFO - Fetching chunk 99/144 for AMP-USDC: 2025-05-07 00:35:45 to 2025-05-07 05:35:45
+2025-05-16 14:37:38,066 - crypto_data_scraper - INFO - Fetched 62 candles for chunk 99
+2025-05-16 14:37:38,067 - crypto_data_scraper - INFO - Fetching chunk 100/144 for AMP-USDC: 2025-05-07 05:35:45 to 2025-05-07 10:35:45
+2025-05-16 14:37:39,243 - crypto_data_scraper - INFO - Fetched 87 candles for chunk 100
+2025-05-16 14:37:39,243 - crypto_data_scraper - INFO - Fetching chunk 101/144 for AMP-USDC: 2025-05-07 10:35:45 to 2025-05-07 15:35:45
+2025-05-16 14:37:40,347 - crypto_data_scraper - INFO - Fetched 86 candles for chunk 101
+2025-05-16 14:37:40,347 - crypto_data_scraper - INFO - Fetching chunk 102/144 for AMP-USDC: 2025-05-07 15:35:45 to 2025-05-07 20:35:45
+2025-05-16 14:37:41,453 - crypto_data_scraper - INFO - Fetched 79 candles for chunk 102
+2025-05-16 14:37:41,454 - crypto_data_scraper - INFO - Fetching chunk 103/144 for AMP-USDC: 2025-05-07 20:35:45 to 2025-05-08 01:35:45
+2025-05-16 14:37:42,558 - crypto_data_scraper - INFO - Fetched 144 candles for chunk 103
+2025-05-16 14:37:42,559 - crypto_data_scraper - INFO - Fetching chunk 104/144 for AMP-USDC: 2025-05-08 01:35:45 to 2025-05-08 06:35:45
+2025-05-16 14:37:43,738 - crypto_data_scraper - INFO - Fetched 130 candles for chunk 104
+2025-05-16 14:37:43,738 - crypto_data_scraper - INFO - Fetching chunk 105/144 for AMP-USDC: 2025-05-08 06:35:45 to 2025-05-08 11:35:45
+2025-05-16 14:37:44,865 - crypto_data_scraper - INFO - Fetched 161 candles for chunk 105
+2025-05-16 14:37:44,866 - crypto_data_scraper - INFO - Fetching chunk 106/144 for AMP-USDC: 2025-05-08 11:35:45 to 2025-05-08 16:35:45
+2025-05-16 14:37:46,054 - crypto_data_scraper - INFO - Fetched 209 candles for chunk 106
+2025-05-16 14:37:46,055 - crypto_data_scraper - INFO - Fetching chunk 107/144 for AMP-USDC: 2025-05-08 16:35:45 to 2025-05-08 21:35:45
+2025-05-16 14:37:47,251 - crypto_data_scraper - INFO - Fetched 165 candles for chunk 107
+2025-05-16 14:37:47,251 - crypto_data_scraper - INFO - Fetching chunk 108/144 for AMP-USDC: 2025-05-08 21:35:45 to 2025-05-09 02:35:45
+2025-05-16 14:37:48,364 - crypto_data_scraper - INFO - Fetched 132 candles for chunk 108
+2025-05-16 14:37:48,364 - crypto_data_scraper - INFO - Fetching chunk 109/144 for AMP-USDC: 2025-05-09 02:35:45 to 2025-05-09 07:35:45
+2025-05-16 14:37:49,532 - crypto_data_scraper - INFO - Fetched 179 candles for chunk 109
+2025-05-16 14:37:49,533 - crypto_data_scraper - INFO - Fetching chunk 110/144 for AMP-USDC: 2025-05-09 07:35:45 to 2025-05-09 12:35:45
+2025-05-16 14:37:50,721 - crypto_data_scraper - INFO - Fetched 200 candles for chunk 110
+2025-05-16 14:37:50,721 - crypto_data_scraper - INFO - Fetching chunk 111/144 for AMP-USDC: 2025-05-09 12:35:45 to 2025-05-09 17:35:45
+2025-05-16 14:37:51,835 - crypto_data_scraper - INFO - Fetched 170 candles for chunk 111
+2025-05-16 14:37:51,836 - crypto_data_scraper - INFO - Fetching chunk 112/144 for AMP-USDC: 2025-05-09 17:35:45 to 2025-05-09 22:35:45
+2025-05-16 14:37:52,961 - crypto_data_scraper - INFO - Fetched 158 candles for chunk 112
+2025-05-16 14:37:52,961 - crypto_data_scraper - INFO - Fetching chunk 113/144 for AMP-USDC: 2025-05-09 22:35:45 to 2025-05-10 03:35:45
+2025-05-16 14:37:54,133 - crypto_data_scraper - INFO - Fetched 121 candles for chunk 113
+2025-05-16 14:37:54,134 - crypto_data_scraper - INFO - Fetching chunk 114/144 for AMP-USDC: 2025-05-10 03:35:45 to 2025-05-10 08:35:45
+2025-05-16 14:37:55,322 - crypto_data_scraper - INFO - Fetched 140 candles for chunk 114
+2025-05-16 14:37:55,323 - crypto_data_scraper - INFO - Fetching chunk 115/144 for AMP-USDC: 2025-05-10 08:35:45 to 2025-05-10 13:35:45
+2025-05-16 14:37:56,441 - crypto_data_scraper - INFO - Fetched 165 candles for chunk 115
+2025-05-16 14:37:56,441 - crypto_data_scraper - INFO - Fetching chunk 116/144 for AMP-USDC: 2025-05-10 13:35:45 to 2025-05-10 18:35:45
+2025-05-16 14:37:57,556 - crypto_data_scraper - INFO - Fetched 156 candles for chunk 116
+2025-05-16 14:37:57,556 - crypto_data_scraper - INFO - Fetching chunk 117/144 for AMP-USDC: 2025-05-10 18:35:45 to 2025-05-10 23:35:45
+2025-05-16 14:37:58,680 - crypto_data_scraper - INFO - Fetched 160 candles for chunk 117
+2025-05-16 14:37:58,680 - crypto_data_scraper - INFO - Fetching chunk 118/144 for AMP-USDC: 2025-05-10 23:35:45 to 2025-05-11 04:35:45
+2025-05-16 14:37:59,849 - crypto_data_scraper - INFO - Fetched 96 candles for chunk 118
+2025-05-16 14:37:59,849 - crypto_data_scraper - INFO - Fetching chunk 119/144 for AMP-USDC: 2025-05-11 04:35:45 to 2025-05-11 09:35:45
+2025-05-16 14:38:00,970 - crypto_data_scraper - INFO - Fetched 123 candles for chunk 119
+2025-05-16 14:38:00,971 - crypto_data_scraper - INFO - Fetching chunk 120/144 for AMP-USDC: 2025-05-11 09:35:45 to 2025-05-11 14:35:45
+2025-05-16 14:38:02,154 - crypto_data_scraper - INFO - Fetched 117 candles for chunk 120
+2025-05-16 14:38:02,154 - crypto_data_scraper - INFO - Fetching chunk 121/144 for AMP-USDC: 2025-05-11 14:35:45 to 2025-05-11 19:35:45
+2025-05-16 14:38:03,349 - crypto_data_scraper - INFO - Fetched 108 candles for chunk 121
+2025-05-16 14:38:03,349 - crypto_data_scraper - INFO - Fetching chunk 122/144 for AMP-USDC: 2025-05-11 19:35:45 to 2025-05-12 00:35:45
+2025-05-16 14:38:04,525 - crypto_data_scraper - INFO - Fetched 140 candles for chunk 122
+2025-05-16 14:38:04,526 - crypto_data_scraper - INFO - Fetching chunk 123/144 for AMP-USDC: 2025-05-12 00:35:45 to 2025-05-12 05:35:45
+2025-05-16 14:38:05,648 - crypto_data_scraper - INFO - Fetched 123 candles for chunk 123
+2025-05-16 14:38:05,648 - crypto_data_scraper - INFO - Fetching chunk 124/144 for AMP-USDC: 2025-05-12 05:35:45 to 2025-05-12 10:35:45
+2025-05-16 14:38:06,765 - crypto_data_scraper - INFO - Fetched 162 candles for chunk 124
+2025-05-16 14:38:06,766 - crypto_data_scraper - INFO - Fetching chunk 125/144 for AMP-USDC: 2025-05-12 10:35:45 to 2025-05-12 15:35:45
+2025-05-16 14:38:07,885 - crypto_data_scraper - INFO - Fetched 182 candles for chunk 125
+2025-05-16 14:38:07,885 - crypto_data_scraper - INFO - Fetching chunk 126/144 for AMP-USDC: 2025-05-12 15:35:45 to 2025-05-12 20:35:45
+2025-05-16 14:38:09,010 - crypto_data_scraper - INFO - Fetched 106 candles for chunk 126
+2025-05-16 14:38:09,011 - crypto_data_scraper - INFO - Fetching chunk 127/144 for AMP-USDC: 2025-05-12 20:35:45 to 2025-05-13 01:35:45
+2025-05-16 14:38:10,126 - crypto_data_scraper - INFO - Fetched 113 candles for chunk 127
+2025-05-16 14:38:10,126 - crypto_data_scraper - INFO - Fetching chunk 128/144 for AMP-USDC: 2025-05-13 01:35:45 to 2025-05-13 06:35:45
+2025-05-16 14:38:11,246 - crypto_data_scraper - INFO - Fetched 90 candles for chunk 128
+2025-05-16 14:38:11,246 - crypto_data_scraper - INFO - Fetching chunk 129/144 for AMP-USDC: 2025-05-13 06:35:45 to 2025-05-13 11:35:45
+2025-05-16 14:38:12,361 - crypto_data_scraper - INFO - Fetched 149 candles for chunk 129
+2025-05-16 14:38:12,362 - crypto_data_scraper - INFO - Fetching chunk 130/144 for AMP-USDC: 2025-05-13 11:35:45 to 2025-05-13 16:35:45
+2025-05-16 14:38:13,541 - crypto_data_scraper - INFO - Fetched 179 candles for chunk 130
+2025-05-16 14:38:13,541 - crypto_data_scraper - INFO - Fetching chunk 131/144 for AMP-USDC: 2025-05-13 16:35:45 to 2025-05-13 21:35:45
+2025-05-16 14:38:14,709 - crypto_data_scraper - INFO - Fetched 146 candles for chunk 131
+2025-05-16 14:38:14,710 - crypto_data_scraper - INFO - Fetching chunk 132/144 for AMP-USDC: 2025-05-13 21:35:45 to 2025-05-14 02:35:45
+2025-05-16 14:38:15,876 - crypto_data_scraper - INFO - Fetched 114 candles for chunk 132
+2025-05-16 14:38:15,876 - crypto_data_scraper - INFO - Fetching chunk 133/144 for AMP-USDC: 2025-05-14 02:35:45 to 2025-05-14 07:35:45
+2025-05-16 14:38:17,057 - crypto_data_scraper - INFO - Fetched 198 candles for chunk 133
+2025-05-16 14:38:17,058 - crypto_data_scraper - INFO - Fetching chunk 134/144 for AMP-USDC: 2025-05-14 07:35:45 to 2025-05-14 12:35:45
+2025-05-16 14:38:18,274 - crypto_data_scraper - INFO - Fetched 247 candles for chunk 134
+2025-05-16 14:38:18,274 - crypto_data_scraper - INFO - Fetching chunk 135/144 for AMP-USDC: 2025-05-14 12:35:45 to 2025-05-14 17:35:45
+2025-05-16 14:38:19,402 - crypto_data_scraper - INFO - Fetched 288 candles for chunk 135
+2025-05-16 14:38:19,403 - crypto_data_scraper - INFO - Fetching chunk 136/144 for AMP-USDC: 2025-05-14 17:35:45 to 2025-05-14 22:35:45
+2025-05-16 14:38:20,519 - crypto_data_scraper - INFO - Fetched 266 candles for chunk 136
+2025-05-16 14:38:20,520 - crypto_data_scraper - INFO - Fetching chunk 137/144 for AMP-USDC: 2025-05-14 22:35:45 to 2025-05-15 03:35:45
+2025-05-16 14:38:21,742 - crypto_data_scraper - INFO - Fetched 293 candles for chunk 137
+2025-05-16 14:38:21,746 - crypto_data_scraper - INFO - Fetching chunk 138/144 for AMP-USDC: 2025-05-15 03:35:45 to 2025-05-15 08:35:45
+2025-05-16 14:38:22,943 - crypto_data_scraper - INFO - Fetched 277 candles for chunk 138
+2025-05-16 14:38:22,944 - crypto_data_scraper - INFO - Fetching chunk 139/144 for AMP-USDC: 2025-05-15 08:35:45 to 2025-05-15 13:35:45
+2025-05-16 14:38:24,070 - crypto_data_scraper - INFO - Fetched 272 candles for chunk 139
+2025-05-16 14:38:24,071 - crypto_data_scraper - INFO - Fetching chunk 140/144 for AMP-USDC: 2025-05-15 13:35:45 to 2025-05-15 18:35:45
+2025-05-16 14:38:25,284 - crypto_data_scraper - INFO - Fetched 199 candles for chunk 140
+2025-05-16 14:38:25,285 - crypto_data_scraper - INFO - Fetching chunk 141/144 for AMP-USDC: 2025-05-15 18:35:45 to 2025-05-15 23:35:45
+2025-05-16 14:38:26,395 - crypto_data_scraper - INFO - Fetched 211 candles for chunk 141
+2025-05-16 14:38:26,395 - crypto_data_scraper - INFO - Fetching chunk 142/144 for AMP-USDC: 2025-05-15 23:35:45 to 2025-05-16 04:35:45
+2025-05-16 14:38:27,509 - crypto_data_scraper - INFO - Fetched 134 candles for chunk 142
+2025-05-16 14:38:27,510 - crypto_data_scraper - INFO - Fetching chunk 143/144 for AMP-USDC: 2025-05-16 04:35:45 to 2025-05-16 09:35:45
+2025-05-16 14:38:28,638 - crypto_data_scraper - INFO - Fetched 167 candles for chunk 143
+2025-05-16 14:38:28,639 - crypto_data_scraper - INFO - Fetching chunk 144/144 for AMP-USDC: 2025-05-16 09:35:45 to 2025-05-16 14:35:45
+2025-05-16 14:38:29,806 - crypto_data_scraper - INFO - Fetched 155 candles for chunk 144
+2025-05-16 14:38:29,836 - crypto_data_scraper - INFO - Average interval between candles for AMP-USDC: 153.3 seconds
+2025-05-16 14:38:29,836 - crypto_data_scraper - WARNING - WARNING: Expected 1-minute candles but average interval is 153.3 seconds
+2025-05-16 14:38:29,837 - crypto_data_scraper - INFO - Successfully fetched 16925 one-minute candles for AMP-USDC
+2025-05-16 14:38:29,991 - crypto_data_scraper - INFO - Data saved to market_data/AMP_USDC/AMP_USDC_20250416_to_20250516_one_minute.csv
+2025-05-16 14:38:30,170 - crypto_data_scraper - INFO - Master data updated for AMP-USDC, total records: 16925
+2025-05-16 14:38:31,672 - crypto_data_scraper - INFO - Found 2 cryptocurrency directories
+2025-05-16 14:38:31,701 - crypto_data_scraper - INFO - Added 14299 records for AAVE-USDC
+2025-05-16 14:38:31,743 - crypto_data_scraper - INFO - Added 16925 records for AMP-USDC
+2025-05-16 14:38:32,064 - crypto_data_scraper - INFO - Combined master file created at market_data/all_crypto_master.csv
+2025-05-16 14:38:32,065 - crypto_data_scraper - INFO - Total records: 31224, Symbols: 2
+2025-05-16 14:38:32,067 - crypto_data_scraper - INFO - Data scraping completed. Saved 2 files.
+2025-05-16 22:00:50,797 - crypto_data_scraper - INFO - CryptoDataScraper initialized to collect 30 days of ONE_MINUTE candles
+2025-05-16 22:00:50,797 - crypto_data_scraper - INFO - Time range: 2025-04-16 22:00:50 to 2025-05-16 22:00:50
+2025-05-16 22:00:50,797 - crypto_data_scraper - INFO - Will scrape data for 1 specified symbols
+2025-05-16 22:00:50,798 - crypto_data_scraper - INFO - Processing 1/1: FLOKI-USDC
+2025-05-16 22:00:50,798 - crypto_data_scraper - INFO - Fetching historical data for FLOKI-USDC
+2025-05-16 22:00:50,799 - crypto_data_scraper - INFO - Need to make 144 API calls to fetch all data for FLOKI-USDC
+2025-05-16 22:00:50,799 - crypto_data_scraper - INFO - Fetching chunk 1/144 for FLOKI-USDC: 2025-04-16 22:00:50 to 2025-04-17 03:00:50
+2025-05-16 22:00:51,039 - crypto_data_scraper - INFO - Fetched 34 candles for chunk 1
+2025-05-16 22:00:51,039 - crypto_data_scraper - INFO - Fetching chunk 2/144 for FLOKI-USDC: 2025-04-17 03:00:50 to 2025-04-17 08:00:50
+2025-05-16 22:00:52,197 - crypto_data_scraper - INFO - Fetched 26 candles for chunk 2
+2025-05-16 22:00:52,198 - crypto_data_scraper - INFO - Fetching chunk 3/144 for FLOKI-USDC: 2025-04-17 08:00:50 to 2025-04-17 13:00:50
+2025-05-16 22:00:53,357 - crypto_data_scraper - INFO - Fetched 60 candles for chunk 3
+2025-05-16 22:00:53,357 - crypto_data_scraper - INFO - Fetching chunk 4/144 for FLOKI-USDC: 2025-04-17 13:00:50 to 2025-04-17 18:00:50
+2025-05-16 22:00:54,472 - crypto_data_scraper - INFO - Fetched 47 candles for chunk 4
+2025-05-16 22:00:54,472 - crypto_data_scraper - INFO - Fetching chunk 5/144 for FLOKI-USDC: 2025-04-17 18:00:50 to 2025-04-17 23:00:50
+2025-05-16 22:00:55,636 - crypto_data_scraper - INFO - Fetched 27 candles for chunk 5
+2025-05-16 22:00:55,636 - crypto_data_scraper - INFO - Fetching chunk 6/144 for FLOKI-USDC: 2025-04-17 23:00:50 to 2025-04-18 04:00:50
+2025-05-16 22:00:56,819 - crypto_data_scraper - INFO - Fetched 59 candles for chunk 6
+2025-05-16 22:00:56,819 - crypto_data_scraper - INFO - Fetching chunk 7/144 for FLOKI-USDC: 2025-04-18 04:00:50 to 2025-04-18 09:00:50
+2025-05-16 22:00:58,009 - crypto_data_scraper - INFO - Fetched 46 candles for chunk 7
+2025-05-16 22:00:58,009 - crypto_data_scraper - INFO - Fetching chunk 8/144 for FLOKI-USDC: 2025-04-18 09:00:50 to 2025-04-18 14:00:50
+2025-05-16 22:00:59,168 - crypto_data_scraper - INFO - Fetched 49 candles for chunk 8
+2025-05-16 22:00:59,168 - crypto_data_scraper - INFO - Fetching chunk 9/144 for FLOKI-USDC: 2025-04-18 14:00:50 to 2025-04-18 19:00:50
+2025-05-16 22:01:00,321 - crypto_data_scraper - INFO - Fetched 35 candles for chunk 9
+2025-05-16 22:01:00,321 - crypto_data_scraper - INFO - Fetching chunk 10/144 for FLOKI-USDC: 2025-04-18 19:00:50 to 2025-04-19 00:00:50
+2025-05-16 22:01:01,448 - crypto_data_scraper - INFO - Fetched 35 candles for chunk 10
+2025-05-16 22:01:01,449 - crypto_data_scraper - INFO - Fetching chunk 11/144 for FLOKI-USDC: 2025-04-19 00:00:50 to 2025-04-19 05:00:50
+2025-05-16 22:01:02,619 - crypto_data_scraper - INFO - Fetched 36 candles for chunk 11
+2025-05-16 22:01:02,619 - crypto_data_scraper - INFO - Fetching chunk 12/144 for FLOKI-USDC: 2025-04-19 05:00:50 to 2025-04-19 10:00:50
+2025-05-16 22:01:03,744 - crypto_data_scraper - INFO - Fetched 27 candles for chunk 12
+2025-05-16 22:01:03,745 - crypto_data_scraper - INFO - Fetching chunk 13/144 for FLOKI-USDC: 2025-04-19 10:00:50 to 2025-04-19 15:00:50
+2025-05-16 22:01:04,900 - crypto_data_scraper - INFO - Fetched 43 candles for chunk 13
+2025-05-16 22:01:04,901 - crypto_data_scraper - INFO - Fetching chunk 14/144 for FLOKI-USDC: 2025-04-19 15:00:50 to 2025-04-19 20:00:50
+2025-05-16 22:01:06,064 - crypto_data_scraper - INFO - Fetched 42 candles for chunk 14
+2025-05-16 22:01:06,064 - crypto_data_scraper - INFO - Fetching chunk 15/144 for FLOKI-USDC: 2025-04-19 20:00:50 to 2025-04-20 01:00:50
+2025-05-16 22:01:07,237 - crypto_data_scraper - INFO - Fetched 57 candles for chunk 15
+2025-05-16 22:01:07,237 - crypto_data_scraper - INFO - Fetching chunk 16/144 for FLOKI-USDC: 2025-04-20 01:00:50 to 2025-04-20 06:00:50
+2025-05-16 22:01:08,397 - crypto_data_scraper - INFO - Fetched 49 candles for chunk 16
+2025-05-16 22:01:08,397 - crypto_data_scraper - INFO - Fetching chunk 17/144 for FLOKI-USDC: 2025-04-20 06:00:50 to 2025-04-20 11:00:50
+2025-05-16 22:01:09,533 - crypto_data_scraper - INFO - Fetched 38 candles for chunk 17
+2025-05-16 22:01:09,534 - crypto_data_scraper - INFO - Fetching chunk 18/144 for FLOKI-USDC: 2025-04-20 11:00:50 to 2025-04-20 16:00:50
+2025-05-16 22:01:10,703 - crypto_data_scraper - INFO - Fetched 47 candles for chunk 18
+2025-05-16 22:01:10,704 - crypto_data_scraper - INFO - Fetching chunk 19/144 for FLOKI-USDC: 2025-04-20 16:00:50 to 2025-04-20 21:00:50
+2025-05-16 22:01:11,869 - crypto_data_scraper - INFO - Fetched 92 candles for chunk 19
+2025-05-16 22:01:11,869 - crypto_data_scraper - INFO - Fetching chunk 20/144 for FLOKI-USDC: 2025-04-20 21:00:50 to 2025-04-21 02:00:50
+2025-05-16 22:01:12,988 - crypto_data_scraper - INFO - Fetched 73 candles for chunk 20
+2025-05-16 22:01:12,989 - crypto_data_scraper - INFO - Fetching chunk 21/144 for FLOKI-USDC: 2025-04-21 02:00:50 to 2025-04-21 07:00:50
+2025-05-16 22:01:14,088 - crypto_data_scraper - INFO - Fetched 67 candles for chunk 21
+2025-05-16 22:01:14,089 - crypto_data_scraper - INFO - Fetching chunk 22/144 for FLOKI-USDC: 2025-04-21 07:00:50 to 2025-04-21 12:00:50
+2025-05-16 22:01:15,276 - crypto_data_scraper - INFO - Fetched 100 candles for chunk 22
+2025-05-16 22:01:15,277 - crypto_data_scraper - INFO - Fetching chunk 23/144 for FLOKI-USDC: 2025-04-21 12:00:50 to 2025-04-21 17:00:50
+2025-05-16 22:01:16,440 - crypto_data_scraper - INFO - Fetched 84 candles for chunk 23
+2025-05-16 22:01:16,440 - crypto_data_scraper - INFO - Fetching chunk 24/144 for FLOKI-USDC: 2025-04-21 17:00:50 to 2025-04-21 22:00:50
+2025-05-16 22:01:17,540 - crypto_data_scraper - INFO - Fetched 49 candles for chunk 24
+2025-05-16 22:01:17,541 - crypto_data_scraper - INFO - Fetching chunk 25/144 for FLOKI-USDC: 2025-04-21 22:00:50 to 2025-04-22 03:00:50
+2025-05-16 22:01:18,651 - crypto_data_scraper - INFO - Fetched 42 candles for chunk 25
+2025-05-16 22:01:18,651 - crypto_data_scraper - INFO - Fetching chunk 26/144 for FLOKI-USDC: 2025-04-22 03:00:50 to 2025-04-22 08:00:50
+2025-05-16 22:01:19,761 - crypto_data_scraper - INFO - Fetched 58 candles for chunk 26
+2025-05-16 22:01:19,762 - crypto_data_scraper - INFO - Fetching chunk 27/144 for FLOKI-USDC: 2025-04-22 08:00:50 to 2025-04-22 13:00:50
+2025-05-16 22:01:20,948 - crypto_data_scraper - INFO - Fetched 143 candles for chunk 27
+2025-05-16 22:01:20,948 - crypto_data_scraper - INFO - Fetching chunk 28/144 for FLOKI-USDC: 2025-04-22 13:00:50 to 2025-04-22 18:00:50
+2025-05-16 22:01:22,081 - crypto_data_scraper - INFO - Fetched 123 candles for chunk 28
+2025-05-16 22:01:22,081 - crypto_data_scraper - INFO - Fetching chunk 29/144 for FLOKI-USDC: 2025-04-22 18:00:50 to 2025-04-22 23:00:50
+2025-05-16 22:01:23,189 - crypto_data_scraper - INFO - Fetched 163 candles for chunk 29
+2025-05-16 22:01:23,189 - crypto_data_scraper - INFO - Fetching chunk 30/144 for FLOKI-USDC: 2025-04-22 23:00:50 to 2025-04-23 04:00:50
+2025-05-16 22:01:24,306 - crypto_data_scraper - INFO - Fetched 105 candles for chunk 30
+2025-05-16 22:01:24,307 - crypto_data_scraper - INFO - Fetching chunk 31/144 for FLOKI-USDC: 2025-04-23 04:00:50 to 2025-04-23 09:00:50
+2025-05-16 22:01:25,493 - crypto_data_scraper - INFO - Fetched 137 candles for chunk 31
+2025-05-16 22:01:25,494 - crypto_data_scraper - INFO - Fetching chunk 32/144 for FLOKI-USDC: 2025-04-23 09:00:50 to 2025-04-23 14:00:50
+2025-05-16 22:01:26,625 - crypto_data_scraper - INFO - Fetched 218 candles for chunk 32
+2025-05-16 22:01:26,625 - crypto_data_scraper - INFO - Fetching chunk 33/144 for FLOKI-USDC: 2025-04-23 14:00:50 to 2025-04-23 19:00:50
+2025-05-16 22:01:27,851 - crypto_data_scraper - INFO - Fetched 130 candles for chunk 33
+2025-05-16 22:01:27,852 - crypto_data_scraper - INFO - Fetching chunk 34/144 for FLOKI-USDC: 2025-04-23 19:00:50 to 2025-04-24 00:00:50
+2025-05-16 22:01:29,010 - crypto_data_scraper - INFO - Fetched 109 candles for chunk 34
+2025-05-16 22:01:29,010 - crypto_data_scraper - INFO - Fetching chunk 35/144 for FLOKI-USDC: 2025-04-24 00:00:50 to 2025-04-24 05:00:50
+2025-05-16 22:01:30,129 - crypto_data_scraper - INFO - Fetched 97 candles for chunk 35
+2025-05-16 22:01:30,130 - crypto_data_scraper - INFO - Fetching chunk 36/144 for FLOKI-USDC: 2025-04-24 05:00:50 to 2025-04-24 10:00:50
+2025-05-16 22:01:31,310 - crypto_data_scraper - INFO - Fetched 110 candles for chunk 36
+2025-05-16 22:01:31,310 - crypto_data_scraper - INFO - Fetching chunk 37/144 for FLOKI-USDC: 2025-04-24 10:00:50 to 2025-04-24 15:00:50
+2025-05-16 22:01:32,470 - crypto_data_scraper - INFO - Fetched 144 candles for chunk 37
+2025-05-16 22:01:32,470 - crypto_data_scraper - INFO - Fetching chunk 38/144 for FLOKI-USDC: 2025-04-24 15:00:50 to 2025-04-24 20:00:50
+2025-05-16 22:01:33,580 - crypto_data_scraper - INFO - Fetched 146 candles for chunk 38
+2025-05-16 22:01:33,580 - crypto_data_scraper - INFO - Fetching chunk 39/144 for FLOKI-USDC: 2025-04-24 20:00:50 to 2025-04-25 01:00:50
+2025-05-16 22:01:34,781 - crypto_data_scraper - INFO - Fetched 116 candles for chunk 39
+2025-05-16 22:01:34,781 - crypto_data_scraper - INFO - Fetching chunk 40/144 for FLOKI-USDC: 2025-04-25 01:00:50 to 2025-04-25 06:00:50
+2025-05-16 22:01:35,950 - crypto_data_scraper - INFO - Fetched 215 candles for chunk 40
+2025-05-16 22:01:35,950 - crypto_data_scraper - INFO - Fetching chunk 41/144 for FLOKI-USDC: 2025-04-25 06:00:50 to 2025-04-25 11:00:50
+2025-05-16 22:01:37,141 - crypto_data_scraper - INFO - Fetched 220 candles for chunk 41
+2025-05-16 22:01:37,141 - crypto_data_scraper - INFO - Fetching chunk 42/144 for FLOKI-USDC: 2025-04-25 11:00:50 to 2025-04-25 16:00:50
+2025-05-16 22:01:38,260 - crypto_data_scraper - INFO - Fetched 196 candles for chunk 42
+2025-05-16 22:01:38,260 - crypto_data_scraper - INFO - Fetching chunk 43/144 for FLOKI-USDC: 2025-04-25 16:00:50 to 2025-04-25 21:00:50
+2025-05-16 22:01:39,441 - crypto_data_scraper - INFO - Fetched 250 candles for chunk 43
+2025-05-16 22:01:39,442 - crypto_data_scraper - INFO - Fetching chunk 44/144 for FLOKI-USDC: 2025-04-25 21:00:50 to 2025-04-26 02:00:50
+2025-05-16 22:01:40,560 - crypto_data_scraper - INFO - Fetched 175 candles for chunk 44
+2025-05-16 22:01:40,561 - crypto_data_scraper - INFO - Fetching chunk 45/144 for FLOKI-USDC: 2025-04-26 02:00:50 to 2025-04-26 07:00:50
+2025-05-16 22:01:41,681 - crypto_data_scraper - INFO - Fetched 173 candles for chunk 45
+2025-05-16 22:01:41,682 - crypto_data_scraper - INFO - Fetching chunk 46/144 for FLOKI-USDC: 2025-04-26 07:00:50 to 2025-04-26 12:00:50
+2025-05-16 22:01:42,800 - crypto_data_scraper - INFO - Fetched 135 candles for chunk 46
+2025-05-16 22:01:42,800 - crypto_data_scraper - INFO - Fetching chunk 47/144 for FLOKI-USDC: 2025-04-26 12:00:50 to 2025-04-26 17:00:50
+2025-05-16 22:01:43,971 - crypto_data_scraper - INFO - Fetched 102 candles for chunk 47
+2025-05-16 22:01:43,972 - crypto_data_scraper - INFO - Fetching chunk 48/144 for FLOKI-USDC: 2025-04-26 17:00:50 to 2025-04-26 22:00:50
+2025-05-16 22:01:45,164 - crypto_data_scraper - INFO - Fetched 112 candles for chunk 48
+2025-05-16 22:01:45,164 - crypto_data_scraper - INFO - Fetching chunk 49/144 for FLOKI-USDC: 2025-04-26 22:00:50 to 2025-04-27 03:00:50
+2025-05-16 22:01:46,310 - crypto_data_scraper - INFO - Fetched 95 candles for chunk 49
+2025-05-16 22:01:46,310 - crypto_data_scraper - INFO - Fetching chunk 50/144 for FLOKI-USDC: 2025-04-27 03:00:50 to 2025-04-27 08:00:50
+2025-05-16 22:01:47,420 - crypto_data_scraper - INFO - Fetched 76 candles for chunk 50
+2025-05-16 22:01:47,420 - crypto_data_scraper - INFO - Fetching chunk 51/144 for FLOKI-USDC: 2025-04-27 08:00:50 to 2025-04-27 13:00:50
+2025-05-16 22:01:48,588 - crypto_data_scraper - INFO - Fetched 120 candles for chunk 51
+2025-05-16 22:01:48,588 - crypto_data_scraper - INFO - Fetching chunk 52/144 for FLOKI-USDC: 2025-04-27 13:00:50 to 2025-04-27 18:00:50
+2025-05-16 22:01:49,702 - crypto_data_scraper - INFO - Fetched 140 candles for chunk 52
+2025-05-16 22:01:49,702 - crypto_data_scraper - INFO - Fetching chunk 53/144 for FLOKI-USDC: 2025-04-27 18:00:50 to 2025-04-27 23:00:50
+2025-05-16 22:01:50,825 - crypto_data_scraper - INFO - Fetched 138 candles for chunk 53
+2025-05-16 22:01:50,826 - crypto_data_scraper - INFO - Fetching chunk 54/144 for FLOKI-USDC: 2025-04-27 23:00:50 to 2025-04-28 04:00:50
+2025-05-16 22:01:51,944 - crypto_data_scraper - INFO - Fetched 112 candles for chunk 54
+2025-05-16 22:01:51,944 - crypto_data_scraper - INFO - Fetching chunk 55/144 for FLOKI-USDC: 2025-04-28 04:00:50 to 2025-04-28 09:00:50
+2025-05-16 22:01:53,055 - crypto_data_scraper - INFO - Fetched 134 candles for chunk 55
+2025-05-16 22:01:53,056 - crypto_data_scraper - INFO - Fetching chunk 56/144 for FLOKI-USDC: 2025-04-28 09:00:50 to 2025-04-28 14:00:50
+2025-05-16 22:01:54,252 - crypto_data_scraper - INFO - Fetched 172 candles for chunk 56
+2025-05-16 22:01:54,252 - crypto_data_scraper - INFO - Fetching chunk 57/144 for FLOKI-USDC: 2025-04-28 14:00:50 to 2025-04-28 19:00:50
+2025-05-16 22:01:55,362 - crypto_data_scraper - INFO - Fetched 232 candles for chunk 57
+2025-05-16 22:01:55,363 - crypto_data_scraper - INFO - Fetching chunk 58/144 for FLOKI-USDC: 2025-04-28 19:00:50 to 2025-04-29 00:00:50
+2025-05-16 22:01:56,544 - crypto_data_scraper - INFO - Fetched 243 candles for chunk 58
+2025-05-16 22:01:56,545 - crypto_data_scraper - INFO - Fetching chunk 59/144 for FLOKI-USDC: 2025-04-29 00:00:50 to 2025-04-29 05:00:50
+2025-05-16 22:01:57,658 - crypto_data_scraper - INFO - Fetched 134 candles for chunk 59
+2025-05-16 22:01:57,658 - crypto_data_scraper - INFO - Fetching chunk 60/144 for FLOKI-USDC: 2025-04-29 05:00:50 to 2025-04-29 10:00:50
+2025-05-16 22:01:58,840 - crypto_data_scraper - INFO - Fetched 146 candles for chunk 60
+2025-05-16 22:01:58,841 - crypto_data_scraper - INFO - Fetching chunk 61/144 for FLOKI-USDC: 2025-04-29 10:00:50 to 2025-04-29 15:00:50
+2025-05-16 22:01:59,963 - crypto_data_scraper - INFO - Fetched 154 candles for chunk 61
+2025-05-16 22:01:59,963 - crypto_data_scraper - INFO - Fetching chunk 62/144 for FLOKI-USDC: 2025-04-29 15:00:50 to 2025-04-29 20:00:50
+2025-05-16 22:02:01,091 - crypto_data_scraper - INFO - Fetched 173 candles for chunk 62
+2025-05-16 22:02:01,091 - crypto_data_scraper - INFO - Fetching chunk 63/144 for FLOKI-USDC: 2025-04-29 20:00:50 to 2025-04-30 01:00:50
+2025-05-16 22:02:02,213 - crypto_data_scraper - INFO - Fetched 138 candles for chunk 63
+2025-05-16 22:02:02,214 - crypto_data_scraper - INFO - Fetching chunk 64/144 for FLOKI-USDC: 2025-04-30 01:00:50 to 2025-04-30 06:00:50
+2025-05-16 22:02:03,368 - crypto_data_scraper - INFO - Fetched 193 candles for chunk 64
+2025-05-16 22:02:03,368 - crypto_data_scraper - INFO - Fetching chunk 65/144 for FLOKI-USDC: 2025-04-30 06:00:50 to 2025-04-30 11:00:50
+2025-05-16 22:02:04,543 - crypto_data_scraper - INFO - Fetched 250 candles for chunk 65
+2025-05-16 22:02:04,543 - crypto_data_scraper - INFO - Fetching chunk 66/144 for FLOKI-USDC: 2025-04-30 11:00:50 to 2025-04-30 16:00:50
+2025-05-16 22:02:05,721 - crypto_data_scraper - INFO - Fetched 213 candles for chunk 66
+2025-05-16 22:02:05,722 - crypto_data_scraper - INFO - Fetching chunk 67/144 for FLOKI-USDC: 2025-04-30 16:00:50 to 2025-04-30 21:00:50
+2025-05-16 22:02:06,892 - crypto_data_scraper - INFO - Fetched 173 candles for chunk 67
+2025-05-16 22:02:06,892 - crypto_data_scraper - INFO - Fetching chunk 68/144 for FLOKI-USDC: 2025-04-30 21:00:50 to 2025-05-01 02:00:50
+2025-05-16 22:02:08,061 - crypto_data_scraper - INFO - Fetched 138 candles for chunk 68
+2025-05-16 22:02:08,061 - crypto_data_scraper - INFO - Fetching chunk 69/144 for FLOKI-USDC: 2025-05-01 02:00:50 to 2025-05-01 07:00:50
+2025-05-16 22:02:09,212 - crypto_data_scraper - INFO - Fetched 123 candles for chunk 69
+2025-05-16 22:02:09,213 - crypto_data_scraper - INFO - Fetching chunk 70/144 for FLOKI-USDC: 2025-05-01 07:00:50 to 2025-05-01 12:00:50
+2025-05-16 22:02:10,383 - crypto_data_scraper - INFO - Fetched 157 candles for chunk 70
+2025-05-16 22:02:10,383 - crypto_data_scraper - INFO - Fetching chunk 71/144 for FLOKI-USDC: 2025-05-01 12:00:50 to 2025-05-01 17:00:50
+2025-05-16 22:02:11,507 - crypto_data_scraper - INFO - Fetched 144 candles for chunk 71
+2025-05-16 22:02:11,507 - crypto_data_scraper - INFO - Fetching chunk 72/144 for FLOKI-USDC: 2025-05-01 17:00:50 to 2025-05-01 22:00:50
+2025-05-16 22:02:12,612 - crypto_data_scraper - INFO - Fetched 84 candles for chunk 72
+2025-05-16 22:02:12,613 - crypto_data_scraper - INFO - Fetching chunk 73/144 for FLOKI-USDC: 2025-05-01 22:00:50 to 2025-05-02 03:00:50
+2025-05-16 22:02:13,778 - crypto_data_scraper - INFO - Fetched 84 candles for chunk 73
+2025-05-16 22:02:13,779 - crypto_data_scraper - INFO - Fetching chunk 74/144 for FLOKI-USDC: 2025-05-02 03:00:50 to 2025-05-02 08:00:50
+2025-05-16 22:02:14,891 - crypto_data_scraper - INFO - Fetched 82 candles for chunk 74
+2025-05-16 22:02:14,891 - crypto_data_scraper - INFO - Fetching chunk 75/144 for FLOKI-USDC: 2025-05-02 08:00:50 to 2025-05-02 13:00:50
+2025-05-16 22:02:16,171 - crypto_data_scraper - INFO - Fetched 99 candles for chunk 75
+2025-05-16 22:02:16,171 - crypto_data_scraper - INFO - Fetching chunk 76/144 for FLOKI-USDC: 2025-05-02 13:00:50 to 2025-05-02 18:00:50
+2025-05-16 22:02:17,290 - crypto_data_scraper - INFO - Fetched 74 candles for chunk 76
+2025-05-16 22:02:17,290 - crypto_data_scraper - INFO - Fetching chunk 77/144 for FLOKI-USDC: 2025-05-02 18:00:50 to 2025-05-02 23:00:50
+2025-05-16 22:02:18,394 - crypto_data_scraper - INFO - Fetched 74 candles for chunk 77
+2025-05-16 22:02:18,394 - crypto_data_scraper - INFO - Fetching chunk 78/144 for FLOKI-USDC: 2025-05-02 23:00:50 to 2025-05-03 04:00:50
+2025-05-16 22:02:19,505 - crypto_data_scraper - INFO - Fetched 68 candles for chunk 78
+2025-05-16 22:02:19,505 - crypto_data_scraper - INFO - Fetching chunk 79/144 for FLOKI-USDC: 2025-05-03 04:00:50 to 2025-05-03 09:00:50
+2025-05-16 22:02:20,671 - crypto_data_scraper - INFO - Fetched 96 candles for chunk 79
+2025-05-16 22:02:20,672 - crypto_data_scraper - INFO - Fetching chunk 80/144 for FLOKI-USDC: 2025-05-03 09:00:50 to 2025-05-03 14:00:50
+2025-05-16 22:02:21,777 - crypto_data_scraper - INFO - Fetched 89 candles for chunk 80
+2025-05-16 22:02:21,777 - crypto_data_scraper - INFO - Fetching chunk 81/144 for FLOKI-USDC: 2025-05-03 14:00:50 to 2025-05-03 19:00:50
+2025-05-16 22:02:22,947 - crypto_data_scraper - INFO - Fetched 82 candles for chunk 81
+2025-05-16 22:02:22,947 - crypto_data_scraper - INFO - Fetching chunk 82/144 for FLOKI-USDC: 2025-05-03 19:00:50 to 2025-05-04 00:00:50
+2025-05-16 22:02:24,052 - crypto_data_scraper - INFO - Fetched 77 candles for chunk 82
+2025-05-16 22:02:24,052 - crypto_data_scraper - INFO - Fetching chunk 83/144 for FLOKI-USDC: 2025-05-04 00:00:50 to 2025-05-04 05:00:50
+2025-05-16 22:02:25,170 - crypto_data_scraper - INFO - Fetched 66 candles for chunk 83
+2025-05-16 22:02:25,171 - crypto_data_scraper - INFO - Fetching chunk 84/144 for FLOKI-USDC: 2025-05-04 05:00:50 to 2025-05-04 10:00:50
+2025-05-16 22:02:26,334 - crypto_data_scraper - INFO - Fetched 87 candles for chunk 84
+2025-05-16 22:02:26,335 - crypto_data_scraper - INFO - Fetching chunk 85/144 for FLOKI-USDC: 2025-05-04 10:00:50 to 2025-05-04 15:00:50
+2025-05-16 22:02:27,491 - crypto_data_scraper - INFO - Fetched 83 candles for chunk 85
+2025-05-16 22:02:27,491 - crypto_data_scraper - INFO - Fetching chunk 86/144 for FLOKI-USDC: 2025-05-04 15:00:50 to 2025-05-04 20:00:50
+2025-05-16 22:02:28,660 - crypto_data_scraper - INFO - Fetched 74 candles for chunk 86
+2025-05-16 22:02:28,660 - crypto_data_scraper - INFO - Fetching chunk 87/144 for FLOKI-USDC: 2025-05-04 20:00:50 to 2025-05-05 01:00:50
+2025-05-16 22:02:29,768 - crypto_data_scraper - INFO - Fetched 73 candles for chunk 87
+2025-05-16 22:02:29,769 - crypto_data_scraper - INFO - Fetching chunk 88/144 for FLOKI-USDC: 2025-05-05 01:00:50 to 2025-05-05 06:00:50
+2025-05-16 22:02:30,931 - crypto_data_scraper - INFO - Fetched 92 candles for chunk 88
+2025-05-16 22:02:30,932 - crypto_data_scraper - INFO - Fetching chunk 89/144 for FLOKI-USDC: 2025-05-05 06:00:50 to 2025-05-05 11:00:50
+2025-05-16 22:02:32,053 - crypto_data_scraper - INFO - Fetched 67 candles for chunk 89
+2025-05-16 22:02:32,053 - crypto_data_scraper - INFO - Fetching chunk 90/144 for FLOKI-USDC: 2025-05-05 11:00:50 to 2025-05-05 16:00:50
+2025-05-16 22:02:33,219 - crypto_data_scraper - INFO - Fetched 112 candles for chunk 90
+2025-05-16 22:02:33,220 - crypto_data_scraper - INFO - Fetching chunk 91/144 for FLOKI-USDC: 2025-05-05 16:00:50 to 2025-05-05 21:00:50
+2025-05-16 22:02:34,330 - crypto_data_scraper - INFO - Fetched 85 candles for chunk 91
+2025-05-16 22:02:34,330 - crypto_data_scraper - INFO - Fetching chunk 92/144 for FLOKI-USDC: 2025-05-05 21:00:50 to 2025-05-06 02:00:50
+2025-05-16 22:02:35,494 - crypto_data_scraper - INFO - Fetched 67 candles for chunk 92
+2025-05-16 22:02:35,494 - crypto_data_scraper - INFO - Fetching chunk 93/144 for FLOKI-USDC: 2025-05-06 02:00:50 to 2025-05-06 07:00:50
+2025-05-16 22:02:36,610 - crypto_data_scraper - INFO - Fetched 84 candles for chunk 93
+2025-05-16 22:02:36,610 - crypto_data_scraper - INFO - Fetching chunk 94/144 for FLOKI-USDC: 2025-05-06 07:00:50 to 2025-05-06 12:00:50
+2025-05-16 22:02:37,770 - crypto_data_scraper - INFO - Fetched 110 candles for chunk 94
+2025-05-16 22:02:37,771 - crypto_data_scraper - INFO - Fetching chunk 95/144 for FLOKI-USDC: 2025-05-06 12:00:50 to 2025-05-06 17:00:50
+2025-05-16 22:02:38,940 - crypto_data_scraper - INFO - Fetched 90 candles for chunk 95
+2025-05-16 22:02:38,940 - crypto_data_scraper - INFO - Fetching chunk 96/144 for FLOKI-USDC: 2025-05-06 17:00:50 to 2025-05-06 22:00:50
+2025-05-16 22:02:40,120 - crypto_data_scraper - INFO - Fetched 114 candles for chunk 96
+2025-05-16 22:02:40,120 - crypto_data_scraper - INFO - Fetching chunk 97/144 for FLOKI-USDC: 2025-05-06 22:00:50 to 2025-05-07 03:00:50
+2025-05-16 22:02:41,282 - crypto_data_scraper - INFO - Fetched 63 candles for chunk 97
+2025-05-16 22:02:41,283 - crypto_data_scraper - INFO - Fetching chunk 98/144 for FLOKI-USDC: 2025-05-07 03:00:50 to 2025-05-07 08:00:50
+2025-05-16 22:02:42,394 - crypto_data_scraper - INFO - Fetched 52 candles for chunk 98
+2025-05-16 22:02:42,394 - crypto_data_scraper - INFO - Fetching chunk 99/144 for FLOKI-USDC: 2025-05-07 08:00:50 to 2025-05-07 13:00:50
+2025-05-16 22:02:43,503 - crypto_data_scraper - INFO - Fetched 71 candles for chunk 99
+2025-05-16 22:02:43,503 - crypto_data_scraper - INFO - Fetching chunk 100/144 for FLOKI-USDC: 2025-05-07 13:00:50 to 2025-05-07 18:00:50
+2025-05-16 22:02:44,670 - crypto_data_scraper - INFO - Fetched 96 candles for chunk 100
+2025-05-16 22:02:44,670 - crypto_data_scraper - INFO - Fetching chunk 101/144 for FLOKI-USDC: 2025-05-07 18:00:50 to 2025-05-07 23:00:50
+2025-05-16 22:02:45,805 - crypto_data_scraper - INFO - Fetched 121 candles for chunk 101
+2025-05-16 22:02:45,806 - crypto_data_scraper - INFO - Fetching chunk 102/144 for FLOKI-USDC: 2025-05-07 23:00:50 to 2025-05-08 04:00:50
+2025-05-16 22:02:46,923 - crypto_data_scraper - INFO - Fetched 119 candles for chunk 102
+2025-05-16 22:02:46,924 - crypto_data_scraper - INFO - Fetching chunk 103/144 for FLOKI-USDC: 2025-05-08 04:00:50 to 2025-05-08 09:00:50
+2025-05-16 22:02:48,091 - crypto_data_scraper - INFO - Fetched 146 candles for chunk 103
+2025-05-16 22:02:48,092 - crypto_data_scraper - INFO - Fetching chunk 104/144 for FLOKI-USDC: 2025-05-08 09:00:50 to 2025-05-08 14:00:50
+2025-05-16 22:02:49,206 - crypto_data_scraper - INFO - Fetched 204 candles for chunk 104
+2025-05-16 22:02:49,206 - crypto_data_scraper - INFO - Fetching chunk 105/144 for FLOKI-USDC: 2025-05-08 14:00:50 to 2025-05-08 19:00:50
+2025-05-16 22:02:50,325 - crypto_data_scraper - INFO - Fetched 197 candles for chunk 105
+2025-05-16 22:02:50,326 - crypto_data_scraper - INFO - Fetching chunk 106/144 for FLOKI-USDC: 2025-05-08 19:00:50 to 2025-05-09 00:00:50
+2025-05-16 22:02:51,480 - crypto_data_scraper - INFO - Fetched 187 candles for chunk 106
+2025-05-16 22:02:51,481 - crypto_data_scraper - INFO - Fetching chunk 107/144 for FLOKI-USDC: 2025-05-09 00:00:50 to 2025-05-09 05:00:50
+2025-05-16 22:02:52,652 - crypto_data_scraper - INFO - Fetched 224 candles for chunk 107
+2025-05-16 22:02:52,652 - crypto_data_scraper - INFO - Fetching chunk 108/144 for FLOKI-USDC: 2025-05-09 05:00:50 to 2025-05-09 10:00:50
+2025-05-16 22:02:53,785 - crypto_data_scraper - INFO - Fetched 269 candles for chunk 108
+2025-05-16 22:02:53,786 - crypto_data_scraper - INFO - Fetching chunk 109/144 for FLOKI-USDC: 2025-05-09 10:00:50 to 2025-05-09 15:00:50
+2025-05-16 22:02:54,910 - crypto_data_scraper - INFO - Fetched 218 candles for chunk 109
+2025-05-16 22:02:54,910 - crypto_data_scraper - INFO - Fetching chunk 110/144 for FLOKI-USDC: 2025-05-09 15:00:50 to 2025-05-09 20:00:50
+2025-05-16 22:02:56,031 - crypto_data_scraper - INFO - Fetched 179 candles for chunk 110
+2025-05-16 22:02:56,031 - crypto_data_scraper - INFO - Fetching chunk 111/144 for FLOKI-USDC: 2025-05-09 20:00:50 to 2025-05-10 01:00:50
+2025-05-16 22:02:57,214 - crypto_data_scraper - INFO - Fetched 204 candles for chunk 111
+2025-05-16 22:02:57,215 - crypto_data_scraper - INFO - Fetching chunk 112/144 for FLOKI-USDC: 2025-05-10 01:00:50 to 2025-05-10 06:00:50
+2025-05-16 22:02:58,334 - crypto_data_scraper - INFO - Fetched 231 candles for chunk 112
+2025-05-16 22:02:58,334 - crypto_data_scraper - INFO - Fetching chunk 113/144 for FLOKI-USDC: 2025-05-10 06:00:50 to 2025-05-10 11:00:50
+2025-05-16 22:02:59,451 - crypto_data_scraper - INFO - Fetched 193 candles for chunk 113
+2025-05-16 22:02:59,451 - crypto_data_scraper - INFO - Fetching chunk 114/144 for FLOKI-USDC: 2025-05-10 11:00:50 to 2025-05-10 16:00:50
+2025-05-16 22:03:00,651 - crypto_data_scraper - INFO - Fetched 194 candles for chunk 114
+2025-05-16 22:03:00,652 - crypto_data_scraper - INFO - Fetching chunk 115/144 for FLOKI-USDC: 2025-05-10 16:00:50 to 2025-05-10 21:00:50
+2025-05-16 22:03:01,871 - crypto_data_scraper - INFO - Fetched 218 candles for chunk 115
+2025-05-16 22:03:01,871 - crypto_data_scraper - INFO - Fetching chunk 116/144 for FLOKI-USDC: 2025-05-10 21:00:50 to 2025-05-11 02:00:50
+2025-05-16 22:03:02,989 - crypto_data_scraper - INFO - Fetched 133 candles for chunk 116
+2025-05-16 22:03:02,989 - crypto_data_scraper - INFO - Fetching chunk 117/144 for FLOKI-USDC: 2025-05-11 02:00:50 to 2025-05-11 07:00:50
+2025-05-16 22:03:04,110 - crypto_data_scraper - INFO - Fetched 135 candles for chunk 117
+2025-05-16 22:03:04,111 - crypto_data_scraper - INFO - Fetching chunk 118/144 for FLOKI-USDC: 2025-05-11 07:00:50 to 2025-05-11 12:00:50
+2025-05-16 22:03:05,232 - crypto_data_scraper - INFO - Fetched 157 candles for chunk 118
+2025-05-16 22:03:05,232 - crypto_data_scraper - INFO - Fetching chunk 119/144 for FLOKI-USDC: 2025-05-11 12:00:50 to 2025-05-11 17:00:50
+2025-05-16 22:03:06,350 - crypto_data_scraper - INFO - Fetched 153 candles for chunk 119
+2025-05-16 22:03:06,351 - crypto_data_scraper - INFO - Fetching chunk 120/144 for FLOKI-USDC: 2025-05-11 17:00:50 to 2025-05-11 22:00:50
+2025-05-16 22:03:07,481 - crypto_data_scraper - INFO - Fetched 181 candles for chunk 120
+2025-05-16 22:03:07,482 - crypto_data_scraper - INFO - Fetching chunk 121/144 for FLOKI-USDC: 2025-05-11 22:00:50 to 2025-05-12 03:00:50
+2025-05-16 22:03:08,621 - crypto_data_scraper - INFO - Fetched 267 candles for chunk 121
+2025-05-16 22:03:08,622 - crypto_data_scraper - INFO - Fetching chunk 122/144 for FLOKI-USDC: 2025-05-12 03:00:50 to 2025-05-12 08:00:50
+2025-05-16 22:03:09,750 - crypto_data_scraper - INFO - Fetched 284 candles for chunk 122
+2025-05-16 22:03:09,751 - crypto_data_scraper - INFO - Fetching chunk 123/144 for FLOKI-USDC: 2025-05-12 08:00:50 to 2025-05-12 13:00:50
+2025-05-16 22:03:10,926 - crypto_data_scraper - INFO - Fetched 270 candles for chunk 123
+2025-05-16 22:03:10,927 - crypto_data_scraper - INFO - Fetching chunk 124/144 for FLOKI-USDC: 2025-05-12 13:00:50 to 2025-05-12 18:00:50
+2025-05-16 22:03:12,140 - crypto_data_scraper - INFO - Fetched 234 candles for chunk 124
+2025-05-16 22:03:12,140 - crypto_data_scraper - INFO - Fetching chunk 125/144 for FLOKI-USDC: 2025-05-12 18:00:50 to 2025-05-12 23:00:50
+2025-05-16 22:03:13,354 - crypto_data_scraper - INFO - Fetched 226 candles for chunk 125
+2025-05-16 22:03:13,354 - crypto_data_scraper - INFO - Fetching chunk 126/144 for FLOKI-USDC: 2025-05-12 23:00:50 to 2025-05-13 04:00:50
+2025-05-16 22:03:14,472 - crypto_data_scraper - INFO - Fetched 204 candles for chunk 126
+2025-05-16 22:03:14,472 - crypto_data_scraper - INFO - Fetching chunk 127/144 for FLOKI-USDC: 2025-05-13 04:00:50 to 2025-05-13 09:00:50
+2025-05-16 22:03:15,600 - crypto_data_scraper - INFO - Fetched 251 candles for chunk 127
+2025-05-16 22:03:15,600 - crypto_data_scraper - INFO - Fetching chunk 128/144 for FLOKI-USDC: 2025-05-13 09:00:50 to 2025-05-13 14:00:50
+2025-05-16 22:03:16,791 - crypto_data_scraper - INFO - Fetched 266 candles for chunk 128
+2025-05-16 22:03:16,791 - crypto_data_scraper - INFO - Fetching chunk 129/144 for FLOKI-USDC: 2025-05-13 14:00:50 to 2025-05-13 19:00:50
+2025-05-16 22:03:17,982 - crypto_data_scraper - INFO - Fetched 237 candles for chunk 129
+2025-05-16 22:03:17,982 - crypto_data_scraper - INFO - Fetching chunk 130/144 for FLOKI-USDC: 2025-05-13 19:00:50 to 2025-05-14 00:00:50
+2025-05-16 22:03:19,156 - crypto_data_scraper - INFO - Fetched 182 candles for chunk 130
+2025-05-16 22:03:19,157 - crypto_data_scraper - INFO - Fetching chunk 131/144 for FLOKI-USDC: 2025-05-14 00:00:50 to 2025-05-14 05:00:50
+2025-05-16 22:03:20,329 - crypto_data_scraper - INFO - Fetched 151 candles for chunk 131
+2025-05-16 22:03:20,330 - crypto_data_scraper - INFO - Fetching chunk 132/144 for FLOKI-USDC: 2025-05-14 05:00:50 to 2025-05-14 10:00:50
+2025-05-16 22:03:21,501 - crypto_data_scraper - INFO - Fetched 174 candles for chunk 132
+2025-05-16 22:03:21,501 - crypto_data_scraper - INFO - Fetching chunk 133/144 for FLOKI-USDC: 2025-05-14 10:00:50 to 2025-05-14 15:00:50
+2025-05-16 22:03:22,671 - crypto_data_scraper - INFO - Fetched 186 candles for chunk 133
+2025-05-16 22:03:22,671 - crypto_data_scraper - INFO - Fetching chunk 134/144 for FLOKI-USDC: 2025-05-14 15:00:50 to 2025-05-14 20:00:50
+2025-05-16 22:03:23,783 - crypto_data_scraper - INFO - Fetched 130 candles for chunk 134
+2025-05-16 22:03:23,783 - crypto_data_scraper - INFO - Fetching chunk 135/144 for FLOKI-USDC: 2025-05-14 20:00:50 to 2025-05-15 01:00:50
+2025-05-16 22:03:24,949 - crypto_data_scraper - INFO - Fetched 123 candles for chunk 135
+2025-05-16 22:03:24,949 - crypto_data_scraper - INFO - Fetching chunk 136/144 for FLOKI-USDC: 2025-05-15 01:00:50 to 2025-05-15 06:00:50
+2025-05-16 22:03:26,056 - crypto_data_scraper - INFO - Fetched 153 candles for chunk 136
+2025-05-16 22:03:26,057 - crypto_data_scraper - INFO - Fetching chunk 137/144 for FLOKI-USDC: 2025-05-15 06:00:50 to 2025-05-15 11:00:50
+2025-05-16 22:03:27,232 - crypto_data_scraper - INFO - Fetched 174 candles for chunk 137
+2025-05-16 22:03:27,233 - crypto_data_scraper - INFO - Fetching chunk 138/144 for FLOKI-USDC: 2025-05-15 11:00:50 to 2025-05-15 16:00:50
+2025-05-16 22:03:28,348 - crypto_data_scraper - INFO - Fetched 184 candles for chunk 138
+2025-05-16 22:03:28,348 - crypto_data_scraper - INFO - Fetching chunk 139/144 for FLOKI-USDC: 2025-05-15 16:00:50 to 2025-05-15 21:00:50
+2025-05-16 22:03:29,461 - crypto_data_scraper - INFO - Fetched 150 candles for chunk 139
+2025-05-16 22:03:29,461 - crypto_data_scraper - INFO - Fetching chunk 140/144 for FLOKI-USDC: 2025-05-15 21:00:50 to 2025-05-16 02:00:50
+2025-05-16 22:03:30,594 - crypto_data_scraper - INFO - Fetched 113 candles for chunk 140
+2025-05-16 22:03:30,595 - crypto_data_scraper - INFO - Fetching chunk 141/144 for FLOKI-USDC: 2025-05-16 02:00:50 to 2025-05-16 07:00:50
+2025-05-16 22:03:31,770 - crypto_data_scraper - INFO - Fetched 119 candles for chunk 141
+2025-05-16 22:03:31,770 - crypto_data_scraper - INFO - Fetching chunk 142/144 for FLOKI-USDC: 2025-05-16 07:00:50 to 2025-05-16 12:00:50
+2025-05-16 22:03:32,935 - crypto_data_scraper - INFO - Fetched 155 candles for chunk 142
+2025-05-16 22:03:32,935 - crypto_data_scraper - INFO - Fetching chunk 143/144 for FLOKI-USDC: 2025-05-16 12:00:50 to 2025-05-16 17:00:50
+2025-05-16 22:03:34,105 - crypto_data_scraper - INFO - Fetched 137 candles for chunk 143
+2025-05-16 22:03:34,106 - crypto_data_scraper - INFO - Fetching chunk 144/144 for FLOKI-USDC: 2025-05-16 17:00:50 to 2025-05-16 22:00:50
+2025-05-16 22:03:35,275 - crypto_data_scraper - INFO - Fetched 159 candles for chunk 144
+2025-05-16 22:03:35,310 - crypto_data_scraper - INFO - Average interval between candles for FLOKI-USDC: 780.0 seconds
+2025-05-16 22:03:35,310 - crypto_data_scraper - WARNING - WARNING: Expected 1-minute candles but average interval is 780.0 seconds
+2025-05-16 22:03:35,311 - crypto_data_scraper - INFO - Successfully fetched 18826 one-minute candles for FLOKI-USDC
+2025-05-16 22:03:35,477 - crypto_data_scraper - INFO - Data saved to market_data/FLOKI_USDC/FLOKI_USDC_20250417_to_20250517_one_minute.csv
+2025-05-16 22:03:35,635 - crypto_data_scraper - INFO - Master data created for FLOKI-USDC, total records: 18826
+2025-05-16 22:03:37,137 - crypto_data_scraper - INFO - Found 3 cryptocurrency directories
+2025-05-16 22:03:37,172 - crypto_data_scraper - INFO - Added 14299 records for AAVE-USDC
+2025-05-16 22:03:37,200 - crypto_data_scraper - INFO - Added 16925 records for AMP-USDC
+2025-05-16 22:03:37,244 - crypto_data_scraper - INFO - Added 18826 records for FLOKI-USDC
+2025-05-16 22:03:37,863 - crypto_data_scraper - INFO - Combined master file created at market_data/all_crypto_master.csv
+2025-05-16 22:03:37,885 - crypto_data_scraper - INFO - Total records: 50050, Symbols: 3
+2025-05-16 22:03:37,889 - crypto_data_scraper - INFO - Data scraping completed. Saved 2 files.

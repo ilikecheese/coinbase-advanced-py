@@ -14,6 +14,13 @@ Features:
 - Provides detailed logging about the data collection process
 """
 
+# === USER CONFIGURABLE OPTIONS ===
+DAYS_LOOKBACK = 30         # Number of days of historical data to retrieve
+QUOTE_CURRENCY = "USDC"    # Quote currency (e.g., USDC, USD)
+SYMBOLS = ["FLOKI-USDC"]             # List of symbols to scrape (e.g., ["BTC-USDC", "ETH-USDC"]), or None for all
+LIMIT = None               # Limit the number of symbols to scrape (int or None)
+# ================================
+
 import os
 import time
 from datetime import datetime, timedelta
@@ -458,43 +465,49 @@ class CryptoDataScraper:
 def parse_arguments():
     """Parse command-line arguments"""
     parser = argparse.ArgumentParser(description="Crypto Data Scraper")
-    parser.add_argument("--days", type=int, default=30, help="Number of days of historical data to retrieve")
-    parser.add_argument("--quote", type=str, default="USDC", help="Quote currency (e.g., USDC, USD)")
-    parser.add_argument("--symbols", type=str, nargs="*", help="Specific symbols to scrape (e.g., BTC-USDC)")
+    parser.add_argument("--days", type=int, default=None, help="Number of days of historical data to retrieve")
+    parser.add_argument("--quote", type=str, default=None, help="Quote currency (e.g., USDC, USD)")
+    parser.add_argument("--symbols", type=str, nargs="*", default=None, help="Specific symbols to scrape (e.g., BTC-USDC)")
     parser.add_argument("--limit", type=int, default=None, help="Limit the number of symbols to scrape")
     return parser.parse_args()
 
 def main():
     """Main entry point for the script"""
     args = parse_arguments()
-    
+
+    # Use CLI args if provided, otherwise fall back to constants at the top
+    days = args.days if args.days is not None else DAYS_LOOKBACK
+    quote = args.quote if args.quote is not None else QUOTE_CURRENCY
+    symbols = args.symbols if args.symbols is not None else SYMBOLS
+    limit = args.limit if args.limit is not None else LIMIT
+
     print(f"Crypto Data Scraper - 1-minute Candles")
-    print(f"Retrieving {args.days} days of historical data")
-    print(f"Quote currency: {args.quote}")
-    
+    print(f"Retrieving {days} days of historical data")
+    print(f"Quote currency: {quote}")
+
     # Initialize and run the scraper
     try:
         scraper = CryptoDataScraper(
             api_key=API_KEY,
             api_secret=API_SECRET,
-            days_lookback=args.days,
-            quote_currency=args.quote
+            days_lookback=days,
+            quote_currency=quote
         )
-        
-        saved_files = scraper.run(symbols=args.symbols, limit=args.limit)
-        
+
+        saved_files = scraper.run(symbols=symbols, limit=limit)
+
         if saved_files:
             print(f"\nData scraping completed successfully!")
             print(f"Data saved to {scraper.BASE_DATA_DIR}/ directory")
             print(f"Total files saved: {len(saved_files)}")
-            
+
             # Print path to combined master file if it was created
             master_path = f"{scraper.BASE_DATA_DIR}/all_crypto_master.csv"
             if os.path.exists(master_path):
                 print(f"\nCombined master file: {master_path}")
         else:
             print("\nNo data files were saved. Check the logs for errors.")
-    
+
     except Exception as e:
         logger.error(f"Error in main function: {e}")
         traceback.print_exc()
