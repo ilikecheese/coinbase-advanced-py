@@ -24,8 +24,8 @@ PARAMETERS = {
     "stop_loss_pct": None,  # 2% stop-loss (set to None to disable)
     "take_profit_pct": None, # 3% take-profit (set to None to disable)
     # ATR dynamic threshold settings (uncomment to enable)
-     "atr_period": 14,  # ATR period (set to None to disable)
-     "atr_k": 1.5,      # ATR scaling factor (set to None to disable)
+     "atr_period": 1,  # ATR period (set to None to disable)
+     "atr_k": 0.01,      # ATR scaling factor (set to None to disable)
 }
 
 def main():
