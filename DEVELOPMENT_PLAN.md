@@ -29,15 +29,15 @@
 - [x] Checkpoint: Risk management logic integrated and validated.
 
 ## Phase 4: Dynamic Thresholds with ATR
-- [ ] Replace static threshold_pct with dynamic ATR-based thresholds:
+- [x] Replace static threshold_pct with dynamic ATR-based thresholds:
     - Calculate ATR (Average True Range) and convert to percentage of price.
     - Set buy/sell thresholds as k * ATR% (scaling factor k configurable).
     - Add buy_threshold and sell_threshold columns to OHLCV DataFrame.
     - Update strategy logic to use dynamic thresholds for trade triggers.
     - Add atr_period and atr_k to strategy_params.
-- [ ] Validate ATR calculations against a known library (e.g., ta, pandas_ta).
-- [ ] Test backtests with different atr_period and atr_k values.
-- [ ] Checkpoint: Dynamic thresholds adapt to volatility and pass tests.
+- [x] Validate ATR calculations against a known library (e.g., ta, pandas_ta).
+- [x] Test backtests with different atr_period and atr_k values.
+- [x] Checkpoint: Dynamic thresholds adapt to volatility and pass tests.
 
 ## Phase 5: Portfolio Value Chart
 - [ ] Compute portfolio value (cash + crypto * close_price) for each candle.
@@ -48,12 +48,12 @@
 - [ ] Checkpoint: Portfolio value chart accurate and informative.
 
 ## Phase 6: Grid Search for Parameter Optimization
-- [ ] Define parameter grid (e.g., threshold_pct, trade_size_pct, atr_k, etc.).
-- [ ] Use itertools.product to generate parameter combinations.
-- [ ] Run backtest for each combination; compute metrics (total return, Sharpe ratio, max drawdown).
-- [ ] Save results to CSV (grid_search_results.csv) and optionally plot heatmaps.
-- [ ] Test with small grid to verify correctness.
-- [ ] Checkpoint: Grid search framework operational and results validated.
+- [x] Define parameter grid (e.g., threshold_pct, trade_size_pct, atr_k, etc.).
+- [x] Use itertools.product to generate parameter combinations.
+- [x] Run backtest for each combination; compute metrics (total return, Sharpe ratio, max drawdown).
+- [x] Save results to CSV (grid_search_results.csv) and optionally plot heatmaps.
+- [x] Test with small grid to verify correctness.
+- [x] Checkpoint: Grid search framework operational and results validated.
 
 ## Phase 7: Advanced Analysis and Visualization
 - [ ] Buy/sell zone highlighting (visualize threshold-based buy/sell regions on price chart)
